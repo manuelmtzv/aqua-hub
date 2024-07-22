@@ -11,9 +11,14 @@
   },
   "dependencies": {
     "@nuxtjs/google-fonts": "^3.2.0",
+    "@pinia/nuxt": "^0.5.1",
+    "@vuelidate/core": "^2.0.3",
+    "@vuelidate/validators": "^2.0.4",
     "h3": "^1.12.0",
     "nuxt": "^3.12.3",
-    "vue": "latest"
+    "pinia": "^2.1.7",
+    "vue": "3.4.33",
+    "vue-toast-notification": "^3.1.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.19",

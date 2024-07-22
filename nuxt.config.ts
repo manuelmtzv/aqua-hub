@@ -2,7 +2,10 @@
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
-  css: ["~/assets/css/main.css"],
+  css: [
+    "~/assets/css/main.css",
+    "vue-toast-notification/dist/theme-bootstrap.css",
+  ],
   postcss: {
     plugins: {
       tailwindcss: {},
@@ -14,5 +17,16 @@ export default defineNuxtConfig({
       Montserrat: true,
     },
   },
-  modules: ["@nuxtjs/google-fonts"],
+  runtimeConfig: {
+    public: {
+      API_BASE_URL: process.env.FISHKEEPERS_HUB_API_URL,
+    },
+  },
+  app: {
+    pageTransition: {
+      name: "page",
+      mode: "out-in",
+    },
+  },
+  modules: ["@nuxtjs/google-fonts", "@pinia/nuxt"],
 });

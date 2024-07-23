@@ -2,6 +2,8 @@
 import useVuelidate from "@vuelidate/core";
 import { required, helpers } from "@vuelidate/validators";
 import { useToast } from "vue-toast-notification";
+import type { LoginResponse } from "~/types/Auth";
+import { getError } from "~/utils/getError";
 
 const { withMessage } = helpers;
 const toast = useToast();
@@ -24,22 +26,25 @@ const rules = {
 const v$ = useVuelidate(rules, loginForm);
 
 async function handleSubmit() {
-  console.log(process.env);
-
   const isValid = await v$.value.$validate();
   if (!isValid) return;
 
   try {
-    const response = await $fetch(
+    const response = await $fetch<LoginResponse>(
       `${runtimeConfig.public.API_BASE_URL}/auth/login`,
       {
         method: "POST",
         body: JSON.stringify(loginForm),
       }
     );
+
+    const token = useCookie("token", {
+      maxAge: Number(response.expiresIn),
+    });
+
+    token.value = response.token;
   } catch (error: any) {
-    console.log(error.data);
-    toast.error(error.data.message);
+    toast.error(getError(error));
   }
 }
 </script>

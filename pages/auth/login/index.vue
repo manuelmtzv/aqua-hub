@@ -38,11 +38,18 @@ async function handleSubmit() {
       }
     );
 
-    const token = useCookie("token", {
+    useCookie("access_token", {
       maxAge: Number(response.expiresIn),
-    });
+      priority: "high",
+    }).value = response.accessToken;
 
-    token.value = response.token;
+    useCookie("refresh_token", {
+      priority: "high",
+    }).value = response.refreshToken;
+
+    toast.success("Sesión iniciada correctamente");
+
+    await navigateTo("/feed");
   } catch (error: any) {
     toast.error(getError(error));
   }

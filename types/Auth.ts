@@ -2,6 +2,7 @@ import type { User } from "./User";
 
 export type LoginResponse = {
   data: User;
-  token: string;
+  accessToken: string;
+  refreshToken: string;
   expiresIn: string;
 };

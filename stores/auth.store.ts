@@ -1,21 +1,32 @@
-import type { LoginResponse } from "~/types/Auth";
-import type { User } from "~/types/User";
+import type { User } from "@/types/User";
 
 export const useAuthStore = defineStore("auth", () => {
   const user = ref<User>();
   const accessToken = useCookie("access_token", { path: "/" });
   const refreshToken = useCookie("refresh_token", { path: "/" });
 
-  const login = (response: LoginResponse) => {
-    user.value = response.data;
-    accessToken.value = response.accessToken;
-    refreshToken.value = response.refreshToken;
-  };
+  function updateTokens(
+    newAccessToken: string,
+    newRefreshToken: string,
+    expiresIn: string
+  ) {
+    accessToken.value = useCookie("access_token", {
+      maxAge: Number(expiresIn),
+      priority: "high",
+    }).value = newAccessToken;
+
+    refreshToken.value = useCookie("refresh_token", {
+      priority: "high",
+    }).value = newRefreshToken;
+  }
 
   return {
     user,
     accessToken,
     refreshToken,
-    login,
+    availableTokens: computed(
+      () => !!accessToken.value && !!refreshToken.value
+    ),
+    updateTokens,
   };
 });

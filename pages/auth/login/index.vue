@@ -1,13 +1,11 @@
 <script setup lang="ts">
 import useVuelidate from "@vuelidate/core";
-import { required, helpers } from "@vuelidate/validators";
 import { useToast } from "vue-toast-notification";
-import type { LoginResponse } from "~/types/Auth";
-import { getError } from "~/utils/getError";
+import { required, helpers } from "@vuelidate/validators";
 
 const { withMessage } = helpers;
+const { login } = useAuth();
 const toast = useToast();
-const runtimeConfig = useRuntimeConfig();
 
 const loginForm = reactive({
   identifier: "",
@@ -30,27 +28,11 @@ async function handleSubmit() {
   if (!isValid) return;
 
   try {
-    const response = await $fetch<LoginResponse>(
-      `${runtimeConfig.public.API_BASE_URL}/auth/login`,
-      {
-        method: "POST",
-        body: JSON.stringify(loginForm),
-      }
-    );
-
-    useCookie("access_token", {
-      maxAge: Number(response.expiresIn),
-      priority: "high",
-    }).value = response.accessToken;
-
-    useCookie("refresh_token", {
-      priority: "high",
-    }).value = response.refreshToken;
-
+    await login(loginForm);
     toast.success("Sesión iniciada correctamente");
 
     await navigateTo("/feed");
-  } catch (error: any) {
+  } catch (error) {
     toast.error(getError(error));
   }
 }
@@ -72,7 +54,7 @@ async function handleSubmit() {
         label="Contraseña:"
         :error="v$.password.$errors.at(0)?.$message"
       >
-        <FormTextInput v-model="loginForm.password" />
+        <FormTextInput v-model="loginForm.password" type="password" />
       </FormLabel>
 
       <FormButton> Iniciar sesión </FormButton>

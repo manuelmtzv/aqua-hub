@@ -1,5 +1,10 @@
 import type { User } from "./User";
 
+export type ValidateResponse = {
+  data: User;
+  message: string;
+};
+
 export type LoginRequest = {
   identifier: string;
   password: string;

@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   css: [
     "~/assets/css/main.css",
     "vue-toast-notification/dist/theme-bootstrap.css",
+    "@vuepic/vue-datepicker/dist/main.css",
   ],
   postcss: {
     plugins: {
@@ -30,6 +31,6 @@ export default defineNuxtConfig({
   },
   modules: ["@nuxtjs/google-fonts", "@pinia/nuxt"],
   build: {
-    transpile: ["@vuepic/vue-datepicker", "vue-toast-notification"],
+    transpile: ["@vuepic/vue-datepicker"],
   },
 });

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import VueDatePicker from "@vuepic/vue-datepicker";
 import useVuelidate from "@vuelidate/core";
 import { required, helpers } from "@vuelidate/validators";
 import { useToast } from "vue-toast-notification";
@@ -87,8 +88,9 @@ async function handleSubmit() {
       label="Fecha de nacimiento:"
       :error="v$.birthdate.$errors.at(0)?.$message"
     >
-      <FormTextInput
+      <VueDatePicker
         v-model="registerForm.birthdate"
+        :enable-time-picker="false"
         placeholder="Su fecha de nacimiento."
       />
     </FormLabel>

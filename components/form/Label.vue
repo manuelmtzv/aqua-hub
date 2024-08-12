@@ -2,17 +2,21 @@
 type FormLabelProps = {
   label: string;
   error?: MaybeRef<string>;
+  class?: string;
+  errorClass?: string;
 };
 
 defineProps<FormLabelProps>();
 </script>
 
 <template>
-  <div>
+  <div :class="cn('flex flex-col gap-1', $props.class)">
     <label for="">{{ label }}</label>
 
     <slot />
 
-    <span v-if="error">{{ error }}</span>
+    <span :class="cn('text-red-400', $props.errorClass)" v-if="error">{{
+      error
+    }}</span>
   </div>
 </template>

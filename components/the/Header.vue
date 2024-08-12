@@ -1,7 +1,9 @@
 <template>
   <header class="py-6 border-b-2">
     <section class="container flex justify-between gap-4 items-center">
-      <h1 class="text-2xl font-semibold">Fishkeepers Hub App</h1>
+      <nuxt-link to="/">
+        <h1 class="text-2xl font-semibold">Fishkeepers Hub App</h1>
+      </nuxt-link>
 
       <nav>
         <ul class="flex gap-3 items-center">

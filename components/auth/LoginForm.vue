@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import useVuelidate from "@vuelidate/core";
-import { useToast } from "vue-toast-notification";
 import { required, helpers } from "@vuelidate/validators";
+import { useToast } from "vue-toast-notification";
 
 const { withMessage } = helpers;
 const { login } = useAuth();
@@ -39,32 +39,33 @@ async function handleSubmit() {
 </script>
 
 <template>
-  <div>
-    <form @submit.prevent="handleSubmit" class="auth-form">
-      <h2 class="text-center font-semibold text-xl">Iniciar sesión</h2>
+  <form @submit.prevent="handleSubmit" class="auth-form">
+    <h2 class="text-center font-semibold text-xl">Iniciar sesión</h2>
 
-      <FormLabel
-        label="Identificador:"
-        :error="v$.identifier.$errors.at(0)?.$message"
-      >
-        <FormTextInput
-          v-model="loginForm.identifier"
-          placeholder="Su correo o nombre de usuario."
-        />
-      </FormLabel>
+    <FormLabel
+      label="Identificador:"
+      :error="v$.identifier.$errors.at(0)?.$message"
+    >
+      <FormTextInput
+        v-model="loginForm.identifier"
+        placeholder="Su correo o nombre de usuario."
+      />
+    </FormLabel>
 
-      <FormLabel
-        label="Contraseña:"
-        :error="v$.password.$errors.at(0)?.$message"
-      >
-        <FormTextInput
-          v-model="loginForm.password"
-          type="password"
-          placeholder="Su contraseña."
-        />
-      </FormLabel>
+    <FormLabel label="Contraseña:" :error="v$.password.$errors.at(0)?.$message">
+      <FormTextInput
+        v-model="loginForm.password"
+        type="password"
+        placeholder="Su contraseña."
+      />
+    </FormLabel>
 
-      <FormButton class="button--black mt-2"> Ingresar </FormButton>
-    </form>
-  </div>
+    <p class="text-xs font-medium">
+      ¿Todavía no tiene una cuenta? Le invitamos a
+      <nuxt-link class="font-semibold" to="/auth/register">registrase</nuxt-link
+      >.
+    </p>
+
+    <FormButton class="button--black mt-2"> Ingresar </FormButton>
+  </form>
 </template>

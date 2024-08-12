@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const { user } = useAuthState();
+</script>
+
 <template>
   <header class="py-6 border-b-2">
     <section class="container flex justify-between gap-4 items-center">
@@ -7,8 +11,9 @@
 
       <nav>
         <ul class="flex gap-3 items-center">
-          <li><nuxt-link to="/">Home</nuxt-link></li>
-          <li><nuxt-link to="/about">About</nuxt-link></li>
+          <li><nuxt-link to="/">Inicio</nuxt-link></li>
+          <li><nuxt-link to="/about">Sobre el proyecto</nuxt-link></li>
+          <li v-if="user"><nuxt-link to="/feed">Feed</nuxt-link></li>
         </ul>
       </nav>
     </section>

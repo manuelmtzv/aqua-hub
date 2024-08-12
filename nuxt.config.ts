@@ -29,4 +29,7 @@ export default defineNuxtConfig({
     },
   },
   modules: ["@nuxtjs/google-fonts", "@pinia/nuxt"],
+  build: {
+    transpile: ["@vuepic/vue-datepicker", "vue-toast-notification"],
+  },
 });

@@ -16,16 +16,26 @@ async function handleLogout() {
       </nuxt-link>
 
       <nav>
-        <ul class="flex gap-3 items-center">
+        <ul class="flex gap-2 items-center">
           <template v-if="!user">
-            <li><nuxt-link to="/">Inicio</nuxt-link></li>
-            <li><nuxt-link to="/about">Sobre el proyecto</nuxt-link></li>
-            <li><nuxt-link to="/auth/login">Iniciar sesión</nuxt-link></li>
-            <li><nuxt-link to="/auth/register">Registrarse</nuxt-link></li>
+            <li><nuxt-link class="link" to="/">Inicio</nuxt-link></li>
+            <li>
+              <nuxt-link class="link" to="/about">Sobre el proyecto</nuxt-link>
+            </li>
+            <li>
+              <nuxt-link class="link" to="/auth/login"
+                >Iniciar sesión</nuxt-link
+              >
+            </li>
+            <li>
+              <nuxt-link class="link" to="/auth/register"
+                >Registrarse</nuxt-link
+              >
+            </li>
           </template>
 
           <template v-else>
-            <li><nuxt-link to="/feed">Feed</nuxt-link></li>
+            <li><nuxt-link class="link" to="/feed">Feed</nuxt-link></li>
             <li><button @click="handleLogout">Cerrar sesión</button></li>
           </template>
         </ul>
@@ -33,3 +43,9 @@ async function handleLogout() {
     </section>
   </header>
 </template>
+
+<style scoped>
+.link {
+  @apply px-2 py-1;
+}
+</style>

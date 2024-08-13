@@ -20,6 +20,12 @@ export const useAuthStore = defineStore("auth", () => {
     }).value = newRefreshToken;
   }
 
+  function logout() {
+    accessToken.value = null;
+    refreshToken.value = null;
+    user.value = undefined;
+  }
+
   return {
     user,
     accessToken,
@@ -28,5 +34,6 @@ export const useAuthStore = defineStore("auth", () => {
       () => !!accessToken.value && !!refreshToken.value
     ),
     updateTokens,
+    logout,
   };
 });

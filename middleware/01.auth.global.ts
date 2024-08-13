@@ -1,6 +1,6 @@
 import { useToast } from "vue-toast-notification";
 
-const whitelist = ["/auth/login", "/auth/register"];
+const whitelist = ["/", "/about", "/auth/login", "/auth/register"];
 
 export default defineNuxtRouteMiddleware(async (to, from) => {
   if (whitelist.includes(to.path)) {

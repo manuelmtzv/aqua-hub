@@ -1,5 +1,11 @@
 <script setup lang="ts">
 const { user } = useAuthState();
+const { logout } = useAuth();
+
+async function handleLogout() {
+  logout();
+  await navigateTo("/auth/login");
+}
 </script>
 
 <template>
@@ -11,9 +17,17 @@ const { user } = useAuthState();
 
       <nav>
         <ul class="flex gap-3 items-center">
-          <li><nuxt-link to="/">Inicio</nuxt-link></li>
-          <li><nuxt-link to="/about">Sobre el proyecto</nuxt-link></li>
-          <li v-if="user"><nuxt-link to="/feed">Feed</nuxt-link></li>
+          <template v-if="!user">
+            <li><nuxt-link to="/">Inicio</nuxt-link></li>
+            <li><nuxt-link to="/about">Sobre el proyecto</nuxt-link></li>
+            <li><nuxt-link to="/auth/login">Iniciar sesión</nuxt-link></li>
+            <li><nuxt-link to="/auth/register">Registrarse</nuxt-link></li>
+          </template>
+
+          <template v-else>
+            <li><nuxt-link to="/feed">Feed</nuxt-link></li>
+            <li><button @click="handleLogout">Cerrar sesión</button></li>
+          </template>
         </ul>
       </nav>
     </section>

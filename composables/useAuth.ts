@@ -33,7 +33,7 @@ export const useAuth = () => {
   }
 
   async function logout() {
-    console.log("logout");
+    authState.logout();
   }
 
   async function validate() {

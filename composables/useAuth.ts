@@ -1,6 +1,7 @@
 import type {
   LoginRequest,
   LoginResponse,
+  RegisterRequest,
   ValidateResponse,
 } from "@/types/Auth";
 
@@ -28,8 +29,22 @@ export const useAuth = () => {
     authState.user.value = response.data;
   }
 
-  async function register() {
-    console.log("register");
+  async function register(registerForm: RegisterRequest) {
+    const response = await $fetch<LoginResponse>(
+      `${runtimeConfig.public.API_BASE_URL}/auth/register`,
+      {
+        method: "POST",
+        body: JSON.stringify(registerForm),
+      }
+    );
+
+    updateTokens(
+      response.accessToken,
+      response.refreshToken,
+      response.expiresIn
+    );
+
+    authState.user.value = response.data;
   }
 
   async function logout() {

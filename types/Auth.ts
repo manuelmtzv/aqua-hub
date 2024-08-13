@@ -10,6 +10,15 @@ export type LoginRequest = {
   password: string;
 };
 
+export type RegisterRequest = {
+  name: string;
+  lastname: string;
+  username: string;
+  email: string;
+  password: string;
+  birthdate: string;
+};
+
 export type LoginResponse = {
   data: User;
   accessToken: string;

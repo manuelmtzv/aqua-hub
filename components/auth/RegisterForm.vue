@@ -45,7 +45,7 @@ async function handleSubmit() {
   if (!isValid) return;
 
   try {
-    await register();
+    await register(registerForm);
     toast.success("Usuario registrado correctamente");
 
     await navigateTo("/feed");

@@ -1,18 +1,26 @@
 <script setup lang="ts">
 const { user } = useAuthState();
 const { logout } = useAuth();
+const route = useRoute();
 
 async function handleLogout() {
   logout();
   await navigateTo("/auth/login");
 }
+
+const mainRoute = computed(() => route.path === "/");
 </script>
 
 <template>
-  <header class="py-6 border-b-2">
+  <header
+    :class="[
+      'py-6 border-b-2 border-transparent transition-colors duration-300 ease-in-out',
+      !mainRoute && 'border-b-gray-200',
+    ]"
+  >
     <section class="container flex justify-between gap-4 items-center">
       <nuxt-link to="/">
-        <h1 class="text-2xl font-semibold">Fishkeepers Hub App</h1>
+        <h1 class="text-2xl font-semibold">Fishkeepers Hub</h1>
       </nuxt-link>
 
       <nav>

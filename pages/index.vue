@@ -47,7 +47,62 @@
       </div>
     </section>
 
-    <section class="container"></section>
+    <section class="container">
+      <div
+        class="p-10 bg-green-900 rounded-lg text-white grid grid-cols-3 gap-12"
+      >
+        <div class="feature">
+          <h4 class="text-xl font-bold">Foros de discusión</h4>
+          <p class="text-lg">
+            Participa en conversaciones con otros acuaristas y fanáticos de la
+            acuariofilia; comparte tus experiencias, y recibe consejos de la
+            comunidad.
+          </p>
+        </div>
+
+        <div class="feature">
+          <h4 class="text-xl font-bold">Interacciones</h4>
+          <p class="text-lg">
+            Participa activamente en la comunidad dejando comentarios en los
+            posts que más te interesen. Además, puedes reaccionar a los
+            contenidos que encuentres útiles.
+          </p>
+        </div>
+
+        <div class="feature">
+          <h4 class="text-xl font-bold">Sigue tus Intereses</h4>
+          <p class="text-lg">
+            Mantente al tanto de los foros, temas y usuarios que más te
+            interesan. Síguelos para recibir sus novedades directamente en tu
+            feed, asegurándote de no perderte nada.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container my-20">
+      <div class="p-10 flex gap-5">
+        <div class="flex flex-col gap-2">
+          <h2 class="text-2xl font-bold">Contenido para todos</h2>
+
+          <p class="text-xl">
+            Aquí los idiomas no están excluidos. Los lenguajes que soportamos en
+            este momento son el español e inglés, permitiendo a los usuarios
+            elegir su idioma preferido. Aunque pueden personalizar su
+            experiencia, también tienen la libertad de explorar contenido en
+            otros idiomas, conectando con una comunidad global. En el futuro,
+            planeamos ampliar el soporte a más idiomas, haciendo que la
+            comunidad y la información lleguen a más personas.
+          </p>
+        </div>
+
+        <img
+          src="/svg/home/multilanguage.svg"
+          alt="Multilanguage support icon"
+          class="max-w-[9.75rem]"
+        />
+      </div>
+    </section>
   </div>
 </template>
 
@@ -89,6 +144,10 @@
 .icons .four {
   --bounce-offset: -1.9rem;
   animation-duration: 3400ms;
+}
+
+.feature {
+  @apply flex flex-col gap-2;
 }
 
 @keyframes moveUpDown {

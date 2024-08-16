@@ -1,7 +1,7 @@
 <template>
-  <div class="container main-content">
+  <div>
     <section
-      class="presentation relative flex flex-col items-center gap-12 py-24 text-center"
+      class="presentation relative flex flex-col items-center gap-12 py-24 text-center container"
     >
       <p class="text-3xl font-bold join">Únete a la comunidad</p>
 
@@ -46,6 +46,8 @@
         />
       </div>
     </section>
+
+    <section class="container"></section>
   </div>
 </template>
 
@@ -58,7 +60,7 @@
   color: 000;
   background: linear-gradient(90deg, #1b49bb 0%, #2fff5c 100%);
   background-clip: text;
-  background-size: 200%;
+  background-size: 300% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
@@ -86,7 +88,7 @@
 
 .icons .four {
   --bounce-offset: -1.9rem;
-  animation-duration: 2900ms;
+  animation-duration: 3400ms;
 }
 
 @keyframes moveUpDown {

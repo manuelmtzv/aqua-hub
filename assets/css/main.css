@@ -19,10 +19,6 @@ body {
   @apply flex-1;
 }
 
-.main-content {
-  @apply py-4;
-}
-
 /*** Elements ***/
 
 /* Forms */

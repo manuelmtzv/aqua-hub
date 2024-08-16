@@ -64,7 +64,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  animation: shine 5s linear infinite;
+  animation: shine 6s linear infinite;
 }
 
 .icons img {

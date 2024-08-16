@@ -54,6 +54,23 @@ const mainRoute = computed(() => route.path === "/");
 
 <style scoped>
 .link {
-  @apply px-2 py-1;
+  @apply px-2 py-1.5 relative text-gray-500;
+}
+
+.link[aria-current="page"] {
+  @apply text-black transition-colors duration-300 ease-in-out;
+}
+
+.link[aria-current="page"]::after {
+  @apply bg-black w-full;
+}
+
+.link::after {
+  @apply absolute left-0 right-0 bottom-0 h-0.5 w-0 bg-gray-500 transition-all duration-300 ease-in-out;
+  content: "";
+}
+
+.link:hover::after {
+  @apply w-full;
 }
 </style>

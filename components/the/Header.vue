@@ -27,9 +27,7 @@ const mainRoute = computed(() => route.path === "/");
         <ul class="flex gap-2 items-center">
           <template v-if="!user">
             <li><nuxt-link class="link" to="/">Inicio</nuxt-link></li>
-            <li>
-              <nuxt-link class="link" to="/about">Sobre el proyecto</nuxt-link>
-            </li>
+            <span class="mx-2">|</span>
             <li>
               <nuxt-link class="link" to="/auth/login"
                 >Iniciar sesión</nuxt-link

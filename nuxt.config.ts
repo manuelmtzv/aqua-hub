@@ -34,7 +34,7 @@ export default defineNuxtConfig({
       API_BASE_URL: process.env.FISHKEEPERS_HUB_API_URL,
     },
   },
-  modules: ["@nuxtjs/google-fonts", "@pinia/nuxt"],
+  modules: ["@nuxtjs/google-fonts", "@pinia/nuxt", "floating-vue/nuxt"],
   build: {
     transpile: ["@vuepic/vue-datepicker"],
   },

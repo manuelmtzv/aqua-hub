@@ -1,3 +1,5 @@
 <template>
-  <div class="main-content container">Feed</div>
+  <div class="main-content container py-4">
+    <FeedPostList />
+  </div>
 </template>

@@ -8,7 +8,7 @@
       <TheLogo />
 
       <button>
-        <MdiIcon icon="mdiMenu" class="text-2xl" />
+        <Icon name="mdi:menu" />
       </button>
     </header>
 
@@ -22,7 +22,7 @@
           to="/app"
           class="flex items-center gap-[0.62rem] ml-[0.62rem]"
         >
-          <MdiIcon icon="mdiNewspaper" />
+          <Icon name="mdi:newspaper" />
           <span>Muro</span>
         </NuxtLink>
 
@@ -30,7 +30,7 @@
           to="/app"
           class="flex items-center gap-[0.62rem] ml-[0.62rem]"
         >
-          <MdiIcon icon="mdiAccountGroup" />
+          <Icon name="mdi:account-group" />
           <span>Usuarios</span>
         </NuxtLink>
 
@@ -38,7 +38,7 @@
           to="/app"
           class="flex items-center gap-[0.62rem] ml-[0.62rem]"
         >
-          <MdiIcon icon="mdiAccount" />
+          <Icon name="mdi:account" />
           <span>Mi perfil</span>
         </NuxtLink>
 
@@ -46,7 +46,7 @@
           to="/app"
           class="flex items-center gap-[0.62rem] ml-[0.62rem]"
         >
-          <MdiIcon icon="mdiBell" />
+          <Icon name="mdi:bell" />
           <span>Configuración</span>
         </NuxtLink>
 
@@ -54,7 +54,7 @@
           to="/app"
           class="flex items-center gap-[0.62rem] ml-[0.62rem]"
         >
-          <MdiIcon icon="mdiMagnify" />
+          <Icon name="mdi:magnify" />
           <span>Salir</span>
         </NuxtLink>
       </nav>
@@ -68,7 +68,7 @@
           to="/app"
           class="flex items-center gap-[0.62rem] ml-[0.62rem]"
         >
-          <MdiIcon icon="mdiBookmark" />
+          <Icon name="mdi:bookmark" />
           <span>Guardado</span>
         </NuxtLink>
 
@@ -76,7 +76,7 @@
           to="/app"
           class="flex items-center gap-[0.62rem] ml-[0.62rem]"
         >
-          <MdiIcon icon="mdiAccountGroup" />
+          <Icon name="mdi:account-group" />
           <span>Foros</span>
         </NuxtLink>
 
@@ -84,7 +84,7 @@
           to="/app"
           class="flex items-center gap-[0.62rem] ml-[0.62rem]"
         >
-          <MdiIcon icon="mdiLabel" />
+          <Icon name="mdi:label" />
           <span>Grupos</span>
         </NuxtLink>
 
@@ -92,7 +92,7 @@
           to="/app"
           class="flex items-center gap-[0.62rem] ml-[0.62rem]"
         >
-          <MdiIcon icon="mdiImage" />
+          <Icon name="mdi:image" />
           <span>Galería</span>
         </NuxtLink>
       </nav>

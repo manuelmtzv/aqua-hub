@@ -9,5 +9,7 @@ const { data } = await useFetch<ListResponse<Post>>(
 </script>
 
 <template>
-  <FeedPostEntry v-for="post in data.data" :key="post.id" :post="post" />
+  <template v-if="data">
+    <FeedPostEntry v-for="post in data.data" :key="post.id" :post="post" />
+  </template>
 </template>

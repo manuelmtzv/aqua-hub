@@ -31,7 +31,7 @@ async function handleSubmit() {
     await login(loginForm);
     toast.success("Sesión iniciada correctamente");
 
-    await navigateTo("/feed");
+    await navigateTo("/app");
   } catch (error) {
     toast.error(getError(error));
   }

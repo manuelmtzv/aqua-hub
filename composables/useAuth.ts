@@ -68,6 +68,8 @@ export const useAuth = () => {
     if (!authState.availableTokens.value) {
       useCookie("access_token").value = null;
       useCookie("refresh_token").value = null;
+
+      throw new Error("No tokens available");
     }
 
     const response = await $fetch<LoginResponse>(

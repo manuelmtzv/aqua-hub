@@ -2,7 +2,7 @@
 
 <template>
   <aside
-    class="sidebar min-w-[300px] min-h-[100svh] px-5 py-8 border-r flex flex-col gap-5"
+    class="sidebar min-w-[300px] min-h-[100svh] max-h-[100svh] px-5 py-8 border-r flex flex-col gap-5"
   >
     <header class="flex items-center justify-between">
       <TheLogo />

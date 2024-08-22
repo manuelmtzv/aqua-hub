@@ -6,8 +6,6 @@
       <slot />
     </main>
   </div>
-
-  <TheFooter />
 </template>
 
 <style>

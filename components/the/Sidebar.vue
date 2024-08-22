@@ -14,13 +14,89 @@
 
     <hr />
 
-    <nav>
+    <div class="flex flex-col gap-4">
       <h2>Menú principal</h2>
-    </nav>
 
-    <nav>
+      <nav class="flex flex-col gap-[0.88rem]">
+        <NuxtLink
+          to="/app"
+          class="flex items-center gap-[0.62rem] ml-[0.62rem]"
+        >
+          <MdiIcon icon="mdiNewspaper" />
+          <span>Muro</span>
+        </NuxtLink>
+
+        <NuxtLink
+          to="/app"
+          class="flex items-center gap-[0.62rem] ml-[0.62rem]"
+        >
+          <MdiIcon icon="mdiAccountGroup" />
+          <span>Usuarios</span>
+        </NuxtLink>
+
+        <NuxtLink
+          to="/app"
+          class="flex items-center gap-[0.62rem] ml-[0.62rem]"
+        >
+          <MdiIcon icon="mdiAccount" />
+          <span>Mi perfil</span>
+        </NuxtLink>
+
+        <NuxtLink
+          to="/app"
+          class="flex items-center gap-[0.62rem] ml-[0.62rem]"
+        >
+          <MdiIcon icon="mdiBell" />
+          <span>Configuración</span>
+        </NuxtLink>
+
+        <NuxtLink
+          to="/app"
+          class="flex items-center gap-[0.62rem] ml-[0.62rem]"
+        >
+          <MdiIcon icon="mdiMagnify" />
+          <span>Salir</span>
+        </NuxtLink>
+      </nav>
+    </div>
+
+    <div class="flex flex-col gap-4">
       <h2>Explorar</h2>
-    </nav>
+
+      <nav class="flex flex-col gap-[0.88rem]">
+        <NuxtLink
+          to="/app"
+          class="flex items-center gap-[0.62rem] ml-[0.62rem]"
+        >
+          <MdiIcon icon="mdiBookmark" />
+          <span>Guardado</span>
+        </NuxtLink>
+
+        <NuxtLink
+          to="/app"
+          class="flex items-center gap-[0.62rem] ml-[0.62rem]"
+        >
+          <MdiIcon icon="mdiAccountGroup" />
+          <span>Foros</span>
+        </NuxtLink>
+
+        <NuxtLink
+          to="/app"
+          class="flex items-center gap-[0.62rem] ml-[0.62rem]"
+        >
+          <MdiIcon icon="mdiLabel" />
+          <span>Grupos</span>
+        </NuxtLink>
+
+        <NuxtLink
+          to="/app"
+          class="flex items-center gap-[0.62rem] ml-[0.62rem]"
+        >
+          <MdiIcon icon="mdiImage" />
+          <span>Galería</span>
+        </NuxtLink>
+      </nav>
+    </div>
   </aside>
 </template>
 

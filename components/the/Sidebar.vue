@@ -1,14 +1,17 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { isSidebarOpen, toggleSidebar } = useLayoutState();
+</script>
 
 <template>
   <aside
-    class="sidebar min-w-[300px] min-h-[100svh] max-h-[100svh] px-5 py-8 border-r flex flex-col gap-5"
+    v-if="isSidebarOpen"
+    class="sidebar min-w-[300px] min-h-[100svh] max-h-[100svh] px-5 py-6 border-r flex flex-col gap-5"
   >
     <header class="flex items-center justify-between">
       <TheLogo />
 
-      <button>
-        <Icon name="mdi:menu" />
+      <button class="flex" @click="toggleSidebar">
+        <Icon name="mdi:menu" class="text-2xl my-auto" />
       </button>
     </header>
 

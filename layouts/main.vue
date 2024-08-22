@@ -2,7 +2,8 @@
   <div class="flex min-h-[100svh] gap-4">
     <TheSidebar />
 
-    <main class="main">
+    <main class="main px-5">
+      <TheMiniHeader />
       <slot />
     </main>
   </div>

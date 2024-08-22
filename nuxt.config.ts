@@ -38,7 +38,8 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "@pinia/nuxt",
     "floating-vue/nuxt",
-    "@nuxt/icon"
+    "@nuxt/icon",
+    "@vueuse/motion/nuxt",
   ],
   build: {
     transpile: ["@vuepic/vue-datepicker"],

@@ -6,6 +6,7 @@ import { useToast } from "vue-toast-notification";
 const { withMessage } = helpers;
 const { login } = useAuth();
 const toast = useToast();
+const logging = ref(false);
 
 const loginForm = reactive({
   identifier: "",
@@ -27,6 +28,8 @@ async function handleSubmit() {
   const isValid = await v$.value.$validate();
   if (!isValid) return;
 
+  logging.value = true;
+
   try {
     await login(loginForm);
     toast.success("Sesión iniciada correctamente");
@@ -34,6 +37,8 @@ async function handleSubmit() {
     await navigateTo("/app");
   } catch (error) {
     toast.error(getError(error));
+  } finally {
+    logging.value = false;
   }
 }
 </script>
@@ -66,6 +71,8 @@ async function handleSubmit() {
       >.
     </p>
 
-    <FormButton class="button--black mt-2"> Ingresar </FormButton>
+    <FormButton class="button--black mt-2" :disabled="logging">
+      Ingresar
+    </FormButton>
   </form>
 </template>

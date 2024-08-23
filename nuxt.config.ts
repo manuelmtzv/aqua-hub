@@ -40,6 +40,7 @@ export default defineNuxtConfig({
     "floating-vue/nuxt",
     "@nuxt/icon",
     "@vueuse/motion/nuxt",
+    "@nuxtjs/i18n",
   ],
   build: {
     transpile: ["@vuepic/vue-datepicker"],

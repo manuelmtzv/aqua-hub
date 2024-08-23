@@ -1,8 +1,4 @@
-<script setup lang="ts">
-definePageMeta({
-  layout: "main",
-});
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <p>Hola</p>

@@ -1,11 +1,12 @@
 <template>
-  <TheHeader />
+  <div class="flex min-h-[100svh]">
+    <TheSidebar />
 
-  <main class="main">
-    <slot />
-  </main>
-
-  <TheFooter />
+    <main class="main px-5">
+      <TheMiniHeader />
+      <slot />
+    </main>
+  </div>
 </template>
 
 <style>

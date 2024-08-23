@@ -6,7 +6,7 @@ const { isSidebarOpen } = useLayoutState();
   <button
     :class="[
       'flex gap-2 bg-gray-100 rounded-lg h-[2.375rem] items-center',
-      isSidebarOpen ? 'p-2' : 'p-1 justify-center',
+      isSidebarOpen ? 'px-2 py-1' : 'p-1 justify-center',
     ]"
   >
     <Icon name="mdi:magnify" class="text-xl" />

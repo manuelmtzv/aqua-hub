@@ -32,12 +32,12 @@ const { isSidebarOpen, toggleSidebar } = useLayoutState();
     <div class="flex flex-col gap-4">
       <h2 v-if="isSidebarOpen">Menú principal</h2>
 
-      <nav class="flex flex-col gap-[0.88rem]">
+      <nav class="flex flex-col">
         <NuxtLink
           to="/app"
           :class="[
-            'flex items-center gap-[0.62rem]',
-            isSidebarOpen ? 'ml-[0.62rem]' : 'border rounded-md p-1',
+            'flex items-center gap-[0.62rem] px-3 py-2',
+            !isSidebarOpen && 'border rounded-md p-1',
           ]"
         >
           <Icon name="mdi:newspaper" :class="[!isSidebarOpen && 'text-2xl']" />
@@ -47,8 +47,8 @@ const { isSidebarOpen, toggleSidebar } = useLayoutState();
         <NuxtLink
           to="/app"
           :class="[
-            'flex items-center gap-[0.62rem]',
-            isSidebarOpen ? 'ml-[0.62rem]' : 'border rounded-md p-1',
+            'flex items-center gap-[0.62rem] px-3 py-2',
+            !isSidebarOpen && 'border rounded-md p-1',
           ]"
         >
           <Icon
@@ -61,8 +61,8 @@ const { isSidebarOpen, toggleSidebar } = useLayoutState();
         <NuxtLink
           to="/app"
           :class="[
-            'flex items-center gap-[0.62rem]',
-            isSidebarOpen ? 'ml-[0.62rem]' : 'border rounded-md p-1',
+            'flex items-center gap-[0.62rem] px-3 py-2',
+            !isSidebarOpen && 'border rounded-md p-1',
           ]"
         >
           <Icon name="mdi:account" :class="[!isSidebarOpen && 'text-2xl']" />
@@ -72,8 +72,8 @@ const { isSidebarOpen, toggleSidebar } = useLayoutState();
         <NuxtLink
           to="/app"
           :class="[
-            'flex items-center gap-[0.62rem]',
-            isSidebarOpen ? 'ml-[0.62rem]' : 'border rounded-md p-1',
+            'flex items-center gap-[0.62rem] px-3 py-2',
+            !isSidebarOpen && 'border rounded-md p-1',
           ]"
         >
           <Icon name="mdi:bell" :class="[!isSidebarOpen && 'text-2xl']" />
@@ -83,8 +83,8 @@ const { isSidebarOpen, toggleSidebar } = useLayoutState();
         <NuxtLink
           to="/app"
           :class="[
-            'flex items-center gap-[0.62rem]',
-            isSidebarOpen ? 'ml-[0.62rem]' : 'border rounded-md p-1',
+            'flex items-center gap-[0.62rem] px-3 py-2',
+            !isSidebarOpen && 'border rounded-md p-1',
           ]"
         >
           <Icon name="mdi:magnify" :class="[!isSidebarOpen && 'text-2xl']" />
@@ -96,12 +96,12 @@ const { isSidebarOpen, toggleSidebar } = useLayoutState();
     <div class="flex flex-col gap-4">
       <h2 v-if="isSidebarOpen">Explorar</h2>
 
-      <nav class="flex flex-col gap-[0.88rem]">
+      <nav class="flex flex-col">
         <NuxtLink
           to="/app"
           :class="[
-            'flex items-center gap-[0.62rem]',
-            isSidebarOpen ? 'ml-[0.62rem]' : 'border rounded-md p-1',
+            'flex items-center gap-[0.62rem] px-3 py-2',
+            !isSidebarOpen && 'border rounded-md p-1',
           ]"
         >
           <Icon name="mdi:bookmark" :class="[!isSidebarOpen && 'text-2xl']" />
@@ -111,8 +111,8 @@ const { isSidebarOpen, toggleSidebar } = useLayoutState();
         <NuxtLink
           to="/app"
           :class="[
-            'flex items-center gap-[0.62rem]',
-            isSidebarOpen ? 'ml-[0.62rem]' : 'border rounded-md p-1',
+            'flex items-center gap-[0.62rem] px-3 py-2',
+            !isSidebarOpen && 'border rounded-md p-1',
           ]"
         >
           <Icon
@@ -125,8 +125,8 @@ const { isSidebarOpen, toggleSidebar } = useLayoutState();
         <NuxtLink
           to="/app"
           :class="[
-            'flex items-center gap-[0.62rem]',
-            isSidebarOpen ? 'ml-[0.62rem]' : 'border rounded-md p-1',
+            'flex items-center gap-[0.62rem] px-3 py-2',
+            !isSidebarOpen && 'border rounded-md p-1',
           ]"
         >
           <Icon name="mdi:label" :class="[!isSidebarOpen && 'text-2xl']" />
@@ -136,8 +136,8 @@ const { isSidebarOpen, toggleSidebar } = useLayoutState();
         <NuxtLink
           to="/app"
           :class="[
-            'flex items-center gap-[0.62rem]',
-            isSidebarOpen ? 'ml-[0.62rem]' : 'border rounded-md p-1',
+            'flex items-center gap-[0.62rem] px-3 py-2',
+            !isSidebarOpen && 'border rounded-md p-1',
           ]"
         >
           <Icon name="mdi:image" :class="[!isSidebarOpen && 'text-2xl']" />

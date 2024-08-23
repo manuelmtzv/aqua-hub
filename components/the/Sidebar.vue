@@ -27,6 +27,8 @@ const { isSidebarOpen, toggleSidebar } = useLayoutState();
 
     <hr />
 
+    <AppSearchBar />
+
     <div class="flex flex-col gap-4">
       <h2 v-if="isSidebarOpen">Menú principal</h2>
 

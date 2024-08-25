@@ -7,6 +7,8 @@ const { withMessage } = helpers;
 const { login } = useAuth();
 const toast = useToast();
 const logging = ref(false);
+const { t } = useI18n();
+const localePath = useLocalePath();
 
 const loginForm = reactive({
   identifier: "",
@@ -15,10 +17,10 @@ const loginForm = reactive({
 
 const rules = {
   identifier: {
-    required: withMessage("El correo o usuario es requerido", required),
+    required: withMessage(t("authIdentifierRequired"), required),
   },
   password: {
-    required: withMessage("La contraseña es requerida", required),
+    required: withMessage(t("authPasswordRequired"), required),
   },
 };
 
@@ -32,9 +34,9 @@ async function handleSubmit() {
 
   try {
     await login(loginForm);
-    toast.success("Sesión iniciada correctamente");
+    toast.success(t("loginSuccess"));
 
-    await navigateTo("/app");
+    await navigateTo(localePath("/app"));
   } catch (error) {
     toast.error(getError(error));
   } finally {
@@ -45,34 +47,39 @@ async function handleSubmit() {
 
 <template>
   <form @submit.prevent="handleSubmit" class="auth-form">
-    <h2 class="text-center font-semibold text-xl">Iniciar sesión</h2>
+    <h2 class="text-center font-semibold text-xl">{{ t("loginTitle") }}</h2>
 
     <FormLabel
-      label="Identificador:"
+      :label="t('authIdentifier')"
       :error="v$.identifier.$errors.at(0)?.$message"
     >
       <FormTextInput
         v-model="loginForm.identifier"
-        placeholder="Su correo o nombre de usuario."
+        :placeholder="t('authIdentifierPlaceholder')"
       />
     </FormLabel>
 
-    <FormLabel label="Contraseña:" :error="v$.password.$errors.at(0)?.$message">
+    <FormLabel
+      :label="t('authPassword')"
+      :error="v$.password.$errors.at(0)?.$message"
+    >
       <FormTextInput
         v-model="loginForm.password"
         type="password"
-        placeholder="Su contraseña."
+        :placeholder="t('authPasswordPlaceholder')"
       />
     </FormLabel>
 
     <p class="text-xs font-medium">
-      ¿Todavía no tiene una cuenta? Le invitamos a
-      <nuxt-link class="font-semibold" to="/auth/register">registrase</nuxt-link
+      {{ t("loginNoAccount") }}
+      <nuxt-link class="font-semibold" to="/auth/register">{{
+        t("loginNoAccountLink")
+      }}</nuxt-link
       >.
     </p>
 
     <FormButton class="button--black mt-2" :disabled="logging">
-      Ingresar
+      {{ t("loginSubmit") }}
     </FormButton>
   </form>
 </template>

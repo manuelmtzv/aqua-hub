@@ -1,7 +1,9 @@
 <script setup lang="ts">
 const { user } = useAuthState();
 const { logout } = useAuth();
+const { t } = useI18n();
 const route = useRoute();
+const localePath = useLocalePath();
 
 async function handleLogout() {
   logout();
@@ -19,31 +21,39 @@ const mainRoute = computed(() => route.path === "/");
     ]"
   >
     <section class="container flex justify-between gap-4 items-center">
-      <nuxt-link to="/">
-        <h1 class="text-2xl font-semibold">Fishkeepers Hub</h1>
-      </nuxt-link>
+      <NuxtLink :to="localePath('/')">
+        <h1 class="text-2xl font-semibold">FishKeepersHub</h1>
+      </NuxtLink>
 
       <nav>
         <ul class="flex gap-2 items-center">
           <template v-if="!user">
-            <li><nuxt-link class="link" to="/">Inicio</nuxt-link></li>
+            <li>
+              <NuxtLink class="link" :to="localePath('/')">{{
+                t("headerHome")
+              }}</NuxtLink>
+            </li>
             <span class="mx-2">|</span>
             <li>
-              <nuxt-link class="link" to="/auth/login"
-                >Iniciar sesión</nuxt-link
-              >
+              <NuxtLink class="link" :to="localePath('/auth/login')">{{
+                t("headerLogin")
+              }}</NuxtLink>
             </li>
             <li>
-              <nuxt-link class="link" to="/auth/register"
-                >Registrarse</nuxt-link
-              >
+              <NuxtLink class="link" :to="localePath('/auth/register')">{{
+                t("headerRegister")
+              }}</NuxtLink>
             </li>
           </template>
 
           <template v-else>
-            <li><nuxt-link class="link" to="/feed">Feed</nuxt-link></li>
+            <li>
+              <NuxtLink class="link" :to="localePath('/feed')">Feed</NuxtLink>
+            </li>
             <li><button @click="handleLogout">Cerrar sesión</button></li>
           </template>
+
+          <TheLocaleSelect />
         </ul>
       </nav>
     </section>

@@ -3,7 +3,14 @@ import { useToast } from "vue-toast-notification";
 const whitelist = ["/", "/about", "/auth/login", "/auth/register"];
 
 export default defineNuxtRouteMiddleware(async (to, from) => {
-  if (whitelist.includes(to.path)) {
+  const langPattern = /^\/[a-z]{2}(\/|$)/;
+  let path = to.path;
+
+  if (langPattern.test(path)) {
+    path = path.replace(langPattern, "/");
+  }
+
+  if (whitelist.includes(path)) {
     return;
   }
 

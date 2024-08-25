@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { isSidebarOpen, toggleSidebar } = useLayoutState();
+const { t } = useI18n();
 </script>
 
 <template>
@@ -30,7 +31,7 @@ const { isSidebarOpen, toggleSidebar } = useLayoutState();
     <AppSearchBar />
 
     <div class="flex flex-col gap-4">
-      <h2 v-if="isSidebarOpen">Menú principal</h2>
+      <h2 v-if="isSidebarOpen">{{ t("navigationMain") }}</h2>
 
       <nav :class="['flex flex-col', !isSidebarOpen && 'gap-[0.88rem]']">
         <NuxtLink
@@ -41,7 +42,7 @@ const { isSidebarOpen, toggleSidebar } = useLayoutState();
           ]"
         >
           <Icon name="mdi:newspaper" :class="[!isSidebarOpen && 'text-2xl']" />
-          <span v-show="isSidebarOpen">Muro</span>
+          <span v-show="isSidebarOpen">{{ t("navigationFeed") }}</span>
         </NuxtLink>
 
         <NuxtLink
@@ -55,7 +56,7 @@ const { isSidebarOpen, toggleSidebar } = useLayoutState();
             name="mdi:account-group"
             :class="[!isSidebarOpen && 'text-2xl']"
           />
-          <span v-show="isSidebarOpen">Usuarios</span>
+          <span v-show="isSidebarOpen">{{ t("navigationUsers") }}</span>
         </NuxtLink>
 
         <NuxtLink
@@ -66,7 +67,7 @@ const { isSidebarOpen, toggleSidebar } = useLayoutState();
           ]"
         >
           <Icon name="mdi:account" :class="[!isSidebarOpen && 'text-2xl']" />
-          <span v-show="isSidebarOpen">Mi perfil</span>
+          <span v-show="isSidebarOpen">{{ t("navigationProfile") }}</span>
         </NuxtLink>
 
         <NuxtLink
@@ -77,7 +78,7 @@ const { isSidebarOpen, toggleSidebar } = useLayoutState();
           ]"
         >
           <Icon name="mdi:bell" :class="[!isSidebarOpen && 'text-2xl']" />
-          <span v-show="isSidebarOpen">Configuración</span>
+          <span v-show="isSidebarOpen">{{ t("navigationNotifications") }}</span>
         </NuxtLink>
 
         <NuxtLink
@@ -87,14 +88,14 @@ const { isSidebarOpen, toggleSidebar } = useLayoutState();
             isSidebarOpen ? 'px-3 py-2' : 'border rounded-md p-1',
           ]"
         >
-          <Icon name="mdi:magnify" :class="[!isSidebarOpen && 'text-2xl']" />
-          <span v-show="isSidebarOpen">Salir</span>
+          <Icon name="mdi:settings" :class="[!isSidebarOpen && 'text-2xl']" />
+          <span v-show="isSidebarOpen">{{ t("navigationSettings") }}</span>
         </NuxtLink>
       </nav>
     </div>
 
     <div class="flex flex-col gap-4">
-      <h2 v-if="isSidebarOpen">Explorar</h2>
+      <h2 v-if="isSidebarOpen">{{ t("navigationExplore") }}</h2>
 
       <nav :class="['flex flex-col', !isSidebarOpen && 'gap-[0.88rem]']">
         <NuxtLink
@@ -105,7 +106,7 @@ const { isSidebarOpen, toggleSidebar } = useLayoutState();
           ]"
         >
           <Icon name="mdi:bookmark" :class="[!isSidebarOpen && 'text-2xl']" />
-          <span v-show="isSidebarOpen">Guardado</span>
+          <span v-show="isSidebarOpen">{{ t("navigationSaved") }}</span>
         </NuxtLink>
 
         <NuxtLink
@@ -119,7 +120,7 @@ const { isSidebarOpen, toggleSidebar } = useLayoutState();
             name="mdi:account-group"
             :class="[!isSidebarOpen && 'text-2xl']"
           />
-          <span v-show="isSidebarOpen">Foros</span>
+          <span v-show="isSidebarOpen">{{ t("navigationForums") }}</span>
         </NuxtLink>
 
         <NuxtLink
@@ -130,7 +131,7 @@ const { isSidebarOpen, toggleSidebar } = useLayoutState();
           ]"
         >
           <Icon name="mdi:label" :class="[!isSidebarOpen && 'text-2xl']" />
-          <span v-show="isSidebarOpen">Grupos</span>
+          <span v-show="isSidebarOpen">{{ t("navigationTopics") }}</span>
         </NuxtLink>
 
         <NuxtLink
@@ -141,7 +142,7 @@ const { isSidebarOpen, toggleSidebar } = useLayoutState();
           ]"
         >
           <Icon name="mdi:image" :class="[!isSidebarOpen && 'text-2xl']" />
-          <span v-show="isSidebarOpen">Galería</span>
+          <span v-show="isSidebarOpen">{{ t("navigationGallery") }}</span>
         </NuxtLink>
       </nav>
     </div>

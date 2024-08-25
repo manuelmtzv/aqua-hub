@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { isSidebarOpen } = useLayoutState();
+const { t } = useI18n();
 </script>
 
 <template>
@@ -10,6 +11,8 @@ const { isSidebarOpen } = useLayoutState();
     ]"
   >
     <Icon name="mdi:magnify" class="text-xl" />
-    <span v-if="isSidebarOpen" class="text-sm"> Buscar... </span>
+    <span v-if="isSidebarOpen" class="text-sm">{{
+      t("navigationSearch")
+    }}</span>
   </button>
 </template>

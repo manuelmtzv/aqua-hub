@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const { user } = useAuthState();
 const { logout } = useAuth();
+const { t } = useI18n();
 const route = useRoute();
 
 async function handleLogout() {
@@ -28,18 +29,20 @@ const localePath = useLocalePath();
         <ul class="flex gap-2 items-center">
           <template v-if="!user">
             <li>
-              <NuxtLink class="link" :to="localePath('/')">Inicio</NuxtLink>
+              <NuxtLink class="link" :to="localePath('/')">{{
+                t("headerHome")
+              }}</NuxtLink>
             </li>
             <span class="mx-2">|</span>
             <li>
-              <NuxtLink class="link" :to="localePath('/auth/login')"
-                >Iniciar sesión</NuxtLink
-              >
+              <NuxtLink class="link" :to="localePath('/auth/login')">{{
+                t("headerLogin")
+              }}</NuxtLink>
             </li>
             <li>
-              <NuxtLink class="link" :to="localePath('/auth/register')"
-                >Registrarse</NuxtLink
-              >
+              <NuxtLink class="link" :to="localePath('/auth/register')">{{
+                t("headerRegister")
+              }}</NuxtLink>
             </li>
           </template>
 

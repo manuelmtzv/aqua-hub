@@ -2,6 +2,8 @@
 definePageMeta({
   layout: "public",
 });
+
+const { t } = useI18n();
 </script>
 
 <template>
@@ -9,22 +11,20 @@ definePageMeta({
     <section
       class="presentation relative flex flex-col items-center gap-12 pt-16 pb-24 text-center container min-h-[calc(100svh-5.125rem)]"
     >
-      <p class="text-3xl font-bold join">Únete a la comunidad</p>
+      <p class="text-3xl font-bold join">{{ t("welcomeSubtitle") }}</p>
 
       <h1 class="max-w-[48rem] text-7xl font-black leading-tight">
-        Comparte tus conocimientos y aprende de otros
+        {{ t("welcome") }}
       </h1>
 
-      <p class="max-w-[48rem] text-3xl text-[1.75rem]">
-        <span class="underline">Fishkeepers Hub</span>, es un espacio para
-        <span class="font-bold">compartir</span> tus experiencias y
-        <span class="font-bold">aprender</span> de otros entusiastas de la
-        <span class="font-bold">acuariofilia</span>. Ya seas principiante o un
-        experto, siempre hay algo nuevo que
-        <span class="font-bold">descubrir</span>.
-      </p>
+      <p
+        class="max-w-[48rem] text-3xl text-[1.75rem]"
+        v-html="t('welcomeIntroduction')"
+      ></p>
 
-      <button class="button button--black font-semibold">Empieza ahora</button>
+      <button class="button button--black font-semibold">
+        {{ t("welcomeStart") }}
+      </button>
 
       <div class="absolute inset-0 -z-10 icons">
         <img
@@ -58,29 +58,23 @@ definePageMeta({
         class="p-10 bg-green-900 rounded-lg text-white grid grid-cols-3 gap-12"
       >
         <div class="feature">
-          <h4 class="text-xl font-bold">Foros de discusión</h4>
+          <h4 class="text-xl font-bold">{{ t("welcomeForumsTitle") }}</h4>
           <p class="text-lg">
-            Participa en conversaciones con otros acuaristas y fanáticos de la
-            acuariofilia; comparte tus experiencias, y recibe consejos de la
-            comunidad.
+            {{ t("welcomeForumsDescription") }}
           </p>
         </div>
 
         <div class="feature">
-          <h4 class="text-xl font-bold">Interacciones</h4>
+          <h4 class="text-xl font-bold">{{ t("welcomeInteractionsTitle") }}</h4>
           <p class="text-lg">
-            Participa activamente en la comunidad dejando comentarios en los
-            posts que más te interesen. Además, puedes reaccionar a los
-            contenidos que encuentres útiles.
+            {{ t("welcomeInteractionsDescription") }}
           </p>
         </div>
 
         <div class="feature">
-          <h4 class="text-xl font-bold">Sigue tus Intereses</h4>
+          <h4 class="text-xl font-bold">{{ t("welcomeInterestsTitle") }}</h4>
           <p class="text-lg">
-            Mantente al tanto de los foros, temas y usuarios que más te
-            interesan. Síguelos para recibir sus novedades directamente en tu
-            feed, asegurándote de no perderte nada.
+            {{ t("welcomeInterestsDescription") }}
           </p>
         </div>
       </div>
@@ -89,16 +83,12 @@ definePageMeta({
     <section class="container my-20">
       <div class="p-10 flex gap-5">
         <div class="flex flex-col gap-2">
-          <h2 class="text-2xl font-bold">Contenido para todos</h2>
+          <h2 class="text-2xl font-bold">
+            {{ t("welcomeLanguagesTitle") }}
+          </h2>
 
           <p class="text-xl">
-            Aquí los idiomas no están excluidos. Los lenguajes que soportamos en
-            este momento son el español e inglés, permitiendo a los usuarios
-            elegir su idioma preferido. Aunque pueden personalizar su
-            experiencia, también tienen la libertad de explorar contenido en
-            otros idiomas, conectando con una comunidad global. En el futuro,
-            planeamos ampliar el soporte a más idiomas, haciendo que la
-            comunidad y la información lleguen a más personas.
+            {{ t("welcomeLanguagesDescription") }}
           </p>
         </div>
 

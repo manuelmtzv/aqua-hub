@@ -5,7 +5,7 @@ const year = new Date().getFullYear();
 <template>
   <footer>
     <section class="container py-6">
-      <p class="text-center">Fishkeepers Hub App &copy; {{ year }}</p>
+      <p class="text-center">FishKeepersHub App &copy; {{ year }}</p>
     </section>
   </footer>
 </template>

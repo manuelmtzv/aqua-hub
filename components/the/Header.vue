@@ -21,7 +21,7 @@ const localePath = useLocalePath();
   >
     <section class="container flex justify-between gap-4 items-center">
       <NuxtLink :to="localePath('/')">
-        <h1 class="text-2xl font-semibold">Fishkeepers Hub</h1>
+        <h1 class="text-2xl font-semibold">FishKeepersHub</h1>
       </NuxtLink>
 
       <nav>

@@ -8,7 +8,7 @@ export default defineNuxtConfig({
       mode: "out-in",
     },
     head: {
-      title: "Fishkeepers Hub",
+      title: "FishKeepersHub",
     },
   },
   css: [

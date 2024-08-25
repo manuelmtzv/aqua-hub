@@ -1,7 +1,7 @@
 export const welcome = {
   welcome: "Comparte tus conocimientos y aprende de otros",
   welcomeSubtitle: "Únete a la comunidad",
-  welcomeIntroduction: `<span class="underline">Fishkeepers Hub</span>, es un espacio para
+  welcomeIntroduction: `<span class="underline">FishKeepersHub</span>, es un espacio para
         <span class="font-bold">compartir</span> tus experiencias y
         <span class="font-bold">aprender</span> de otros entusiastas de la
         <span class="font-bold">acuariofilia</span>. Ya seas principiante o un

@@ -3,6 +3,7 @@ import VueDatePicker from "@vuepic/vue-datepicker";
 import useVuelidate from "@vuelidate/core";
 import { required, helpers } from "@vuelidate/validators";
 import { useToast } from "vue-toast-notification";
+const { t } = useI18n();
 
 const { withMessage } = helpers;
 const { register } = useAuth();
@@ -19,22 +20,22 @@ const registerForm = reactive({
 
 const rules = {
   name: {
-    required: withMessage("El nombre es requerido", required),
+    required: withMessage(t("authNameRequired"), required),
   },
   lastname: {
-    required: withMessage("El apellido es requerido", required),
+    required: withMessage(t("authLastnameRequired"), required),
   },
   username: {
-    required: withMessage("El nombre de usuario es requerido", required),
+    required: withMessage(t("authUsernameRequired"), required),
   },
   email: {
-    required: withMessage("El correo es requerido", required),
+    required: withMessage(t("authEmailRequired"), required),
   },
   birthdate: {
-    required: withMessage("La fecha de nacimiento es requerida", required),
+    required: withMessage(t("authBirthdateRequired"), required),
   },
   password: {
-    required: withMessage("La contraseña es requerida", required),
+    required: withMessage(t("authIdentifierRequired"), required),
   },
 };
 
@@ -46,7 +47,7 @@ async function handleSubmit() {
 
   try {
     await register(registerForm);
-    toast.success("Usuario registrado correctamente");
+    toast.success(t("registerSuccess"));
 
     await navigateTo("/app");
   } catch (error) {
@@ -59,57 +60,73 @@ async function handleSubmit() {
   <form @submit.prevent="handleSubmit" class="auth-form">
     <h2 class="text-center font-semibold text-xl">Registrarse</h2>
 
-    <FormLabel label="Nombre:" :error="v$.name.$errors.at(0)?.$message">
-      <FormTextInput v-model="registerForm.name" placeholder="Su nombre." />
-    </FormLabel>
-
-    <FormLabel label="Apellido:" :error="v$.lastname.$errors.at(0)?.$message">
+    <FormLabel :label="t('authName')" :error="v$.name.$errors.at(0)?.$message">
       <FormTextInput
-        v-model="registerForm.lastname"
-        placeholder="Su apellido."
+        v-model="registerForm.name"
+        :placeholder="t('authNamePlaceholder')"
       />
     </FormLabel>
 
     <FormLabel
-      label="Nombre de usuario:"
+      :label="t('authLastname')"
+      :error="v$.lastname.$errors.at(0)?.$message"
+    >
+      <FormTextInput
+        v-model="registerForm.lastname"
+        :placeholder="t('authLastnamePlaceholder')"
+      />
+    </FormLabel>
+
+    <FormLabel
+      :label="t('authUsername')"
       :error="v$.username.$errors.at(0)?.$message"
     >
       <FormTextInput
         v-model="registerForm.username"
-        placeholder="Su nombre de usuario."
+        :placeholder="t('authUsernamePlaceholder')"
       />
     </FormLabel>
 
-    <FormLabel label="Correo:" :error="v$.email.$errors.at(0)?.$message">
-      <FormTextInput v-model="registerForm.email" placeholder="Su correo." />
+    <FormLabel
+      :label="t('authEmail')"
+      :error="v$.email.$errors.at(0)?.$message"
+    >
+      <FormTextInput
+        v-model="registerForm.email"
+        :placeholder="t('authEmailPlaceholder')"
+      />
     </FormLabel>
 
     <FormLabel
-      label="Fecha de nacimiento:"
+      :label="t('authBirthdate')"
       :error="v$.birthdate.$errors.at(0)?.$message"
     >
       <VueDatePicker
         v-model="registerForm.birthdate"
         :enable-time-picker="false"
-        placeholder="Su fecha de nacimiento."
+        :placeholder="t('authBirthdatePlaceholder')"
       />
     </FormLabel>
 
-    <FormLabel label="Contraseña:" :error="v$.password.$errors.at(0)?.$message">
+    <FormLabel
+      :label="t('authPassword')"
+      :error="v$.password.$errors.at(0)?.$message"
+    >
       <FormTextInput
         v-model="registerForm.password"
         type="password"
-        placeholder="Su contraseña."
+        :placeholder="t('authPasswordPlaceholder')"
       />
     </FormLabel>
 
     <p class="text-xs font-medium">
-      ¿Ya tiene una cuenta? Le invitamos a
-      <nuxt-link class="font-semibold" to="/auth/login"
-        >iniciar sesión</nuxt-link
+      {{ t("registerAlready") }}
+      <nuxt-link class="font-semibold" to="/auth/login">{{
+        t("registerAlreadyLink")
+      }}</nuxt-link
       >.
     </p>
 
-    <FormButton class="button--black">Registrarse</FormButton>
+    <FormButton class="button--black">{{ t("registerSubmit") }}</FormButton>
   </form>
 </template>

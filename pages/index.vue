@@ -7,7 +7,7 @@ definePageMeta({
 <template>
   <div>
     <section
-      class="presentation relative flex flex-col items-center gap-12 py-24 text-center container"
+      class="presentation relative flex flex-col items-center gap-12 pt-16 pb-24 text-center container min-h-[calc(100svh-5.125rem)]"
     >
       <p class="text-3xl font-bold join">Únete a la comunidad</p>
 

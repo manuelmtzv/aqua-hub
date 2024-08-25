@@ -16,6 +16,19 @@ export default defineNuxtConfig({
     "vue-toast-notification/dist/theme-bootstrap.css",
     "@vuepic/vue-datepicker/dist/main.css",
   ],
+  modules: [
+    "@nuxtjs/google-fonts",
+    "@pinia/nuxt",
+    "floating-vue/nuxt",
+    "@nuxt/icon",
+    "@vueuse/motion/nuxt",
+    "@nuxtjs/i18n",
+  ],
+  i18n: {
+    locales: ["en", "es"],
+    defaultLocale: "en",
+    vueI18n: "./i18n.config.ts",
+  },
   postcss: {
     plugins: {
       tailwindcss: {},
@@ -34,14 +47,6 @@ export default defineNuxtConfig({
       API_BASE_URL: process.env.FISHKEEPERS_HUB_API_URL,
     },
   },
-  modules: [
-    "@nuxtjs/google-fonts",
-    "@pinia/nuxt",
-    "floating-vue/nuxt",
-    "@nuxt/icon",
-    "@vueuse/motion/nuxt",
-    "@nuxtjs/i18n",
-  ],
   build: {
     transpile: ["@vuepic/vue-datepicker"],
   },

@@ -4,6 +4,7 @@ import useVuelidate from "@vuelidate/core";
 import { required, helpers } from "@vuelidate/validators";
 import { useToast } from "vue-toast-notification";
 const { t } = useI18n();
+const localePath = useLocalePath();
 
 const { withMessage } = helpers;
 const { register } = useAuth();
@@ -49,7 +50,7 @@ async function handleSubmit() {
     await register(registerForm);
     toast.success(t("registerSuccess"));
 
-    await navigateTo("/app");
+    await navigateTo(localePath("/app"));
   } catch (error) {
     toast.error(getError(error));
   }

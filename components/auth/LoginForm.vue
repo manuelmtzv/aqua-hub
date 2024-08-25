@@ -8,6 +8,7 @@ const { login } = useAuth();
 const toast = useToast();
 const logging = ref(false);
 const { t } = useI18n();
+const localePath = useLocalePath();
 
 const loginForm = reactive({
   identifier: "",
@@ -35,7 +36,7 @@ async function handleSubmit() {
     await login(loginForm);
     toast.success(t("loginSuccess"));
 
-    await navigateTo("/app");
+    await navigateTo(localePath("/app"));
   } catch (error) {
     toast.error(getError(error));
   } finally {

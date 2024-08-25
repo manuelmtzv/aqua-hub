@@ -3,6 +3,7 @@ const { user } = useAuthState();
 const { logout } = useAuth();
 const { t } = useI18n();
 const route = useRoute();
+const localePath = useLocalePath();
 
 async function handleLogout() {
   logout();
@@ -10,7 +11,6 @@ async function handleLogout() {
 }
 
 const mainRoute = computed(() => route.path === "/");
-const localePath = useLocalePath();
 </script>
 
 <template>
@@ -47,7 +47,9 @@ const localePath = useLocalePath();
           </template>
 
           <template v-else>
-            <li><NuxtLink class="link" to="/feed">Feed</NuxtLink></li>
+            <li>
+              <NuxtLink class="link" :to="localePath('/feed')">Feed</NuxtLink>
+            </li>
             <li><button @click="handleLogout">Cerrar sesión</button></li>
           </template>
 

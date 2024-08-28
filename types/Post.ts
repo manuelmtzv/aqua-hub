@@ -1,6 +1,4 @@
-import type { Forum } from "./Forum";
-import type { Topic } from "./Topic";
-import type { User } from "./User";
+import type { Forum, User, Topic, Comment } from "./";
 
 export type Post = {
   id: string;
@@ -14,4 +12,5 @@ export type Post = {
   topic: Topic;
   topics: Topic[];
   reactions: any[];
+  comments: Comment[];
 };

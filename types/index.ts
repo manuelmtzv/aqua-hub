@@ -5,3 +5,4 @@ export * from "./Post";
 export * from "./Topic";
 export * from "./User";
 export * from "./ListResponse";
+export * from "./Comment";

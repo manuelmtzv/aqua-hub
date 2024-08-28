@@ -4,6 +4,6 @@
   <div class="flex flex-col gap-4">
     <h1>Feed</h1>
 
-    <FeedPostList />
+    <PostList />
   </div>
 </template>

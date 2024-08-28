@@ -10,6 +10,6 @@ const { data } = await useFetch<ListResponse<Post>>(
 
 <template>
   <template v-if="data">
-    <FeedPostEntry v-for="post in data.data" :key="post.id" :post="post" />
+    <PostEntry v-for="post in data.data" :key="post.id" :post="post" />
   </template>
 </template>

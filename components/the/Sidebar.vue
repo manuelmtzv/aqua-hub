@@ -33,12 +33,12 @@ const { t } = useI18n();
     <div class="flex flex-col gap-4">
       <h2 v-if="isSidebarOpen">{{ t("navigationMain") }}</h2>
 
-      <nav :class="['flex flex-col', !isSidebarOpen && 'gap-[0.88rem]']">
+      <nav :class="['flex flex-col gap-2', !isSidebarOpen && 'gap-[0.88rem]']">
         <NuxtLink
           to="/app/feed"
           :class="[
-            'flex items-center gap-[0.62rem] link',
-            isSidebarOpen ? 'px-3 py-2' : 'border rounded-md p-1',
+            'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link',
+            isSidebarOpen ? 'px-3 py-1.5' : 'border rounded-md p-1',
           ]"
         >
           <Icon name="mdi:newspaper" :class="[!isSidebarOpen && 'text-2xl']" />
@@ -48,8 +48,8 @@ const { t } = useI18n();
         <NuxtLink
           to="/app/people"
           :class="[
-            'flex items-center gap-[0.62rem] link',
-            isSidebarOpen ? 'px-3 py-2' : 'border rounded-md p-1',
+            'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link',
+            isSidebarOpen ? 'px-3 py-1.5' : 'border rounded-md p-1',
           ]"
         >
           <Icon
@@ -62,8 +62,8 @@ const { t } = useI18n();
         <NuxtLink
           to="/app/profile"
           :class="[
-            'flex items-center gap-[0.62rem] link',
-            isSidebarOpen ? 'px-3 py-2' : 'border rounded-md p-1',
+            'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link',
+            isSidebarOpen ? 'px-3 py-1.5' : 'border rounded-md p-1',
           ]"
         >
           <Icon name="mdi:account" :class="[!isSidebarOpen && 'text-2xl']" />
@@ -73,8 +73,8 @@ const { t } = useI18n();
         <NuxtLink
           to="/app/notifications"
           :class="[
-            'flex items-center gap-[0.62rem] link',
-            isSidebarOpen ? 'px-3 py-2' : 'border rounded-md p-1',
+            'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link',
+            isSidebarOpen ? 'px-3 py-1.5' : 'border rounded-md p-1',
           ]"
         >
           <Icon name="mdi:bell" :class="[!isSidebarOpen && 'text-2xl']" />
@@ -84,8 +84,8 @@ const { t } = useI18n();
         <NuxtLink
           to="/app/settings"
           :class="[
-            'flex items-center gap-[0.62rem] link',
-            isSidebarOpen ? 'px-3 py-2' : 'border rounded-md p-1',
+            'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link',
+            isSidebarOpen ? 'px-3 py-1.5' : 'border rounded-md p-1',
           ]"
         >
           <Icon name="mdi:settings" :class="[!isSidebarOpen && 'text-2xl']" />
@@ -97,12 +97,12 @@ const { t } = useI18n();
     <div class="flex flex-col gap-4">
       <h2 v-if="isSidebarOpen">{{ t("navigationExplore") }}</h2>
 
-      <nav :class="['flex flex-col', !isSidebarOpen && 'gap-[0.88rem]']">
+      <nav :class="['flex flex-col gap-2', !isSidebarOpen && 'gap-[0.88rem]']">
         <NuxtLink
           to="/app/saved"
           :class="[
-            'flex items-center gap-[0.62rem] link',
-            isSidebarOpen ? 'px-3 py-2' : 'border rounded-md p-1',
+            'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link',
+            isSidebarOpen ? 'px-3 py-1.5' : 'border rounded-md p-1',
           ]"
         >
           <Icon name="mdi:bookmark" :class="[!isSidebarOpen && 'text-2xl']" />
@@ -112,8 +112,8 @@ const { t } = useI18n();
         <NuxtLink
           to="/app/forums"
           :class="[
-            'flex items-center gap-[0.62rem] link',
-            isSidebarOpen ? 'px-3 py-2' : 'border rounded-md p-1',
+            'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link',
+            isSidebarOpen ? 'px-3 py-1.5' : 'border rounded-md p-1',
           ]"
         >
           <Icon
@@ -126,8 +126,8 @@ const { t } = useI18n();
         <NuxtLink
           to="/app/topics"
           :class="[
-            'flex items-center gap-[0.62rem] link',
-            isSidebarOpen ? 'px-3 py-2' : 'border rounded-md p-1',
+            'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link',
+            isSidebarOpen ? 'px-3 py-1.5' : 'border rounded-md p-1',
           ]"
         >
           <Icon name="mdi:label" :class="[!isSidebarOpen && 'text-2xl']" />
@@ -137,8 +137,8 @@ const { t } = useI18n();
         <NuxtLink
           to="/app/gallery"
           :class="[
-            'flex items-center gap-[0.62rem] link',
-            isSidebarOpen ? 'px-3 py-2' : 'border rounded-md p-1',
+            'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link',
+            isSidebarOpen ? 'px-3 py-1.5' : 'border rounded-md p-1',
           ]"
         >
           <Icon name="mdi:image" :class="[!isSidebarOpen && 'text-2xl']" />
@@ -150,11 +150,7 @@ const { t } = useI18n();
 </template>
 
 <style setup>
-.link {
-  @apply rounded-md;
-}
-
 .link[aria-current="page"] {
-  @apply bg-gray-50;
+  @apply bg-gray-50 shadow-sm;
 }
 </style>

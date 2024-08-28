@@ -1,5 +1,5 @@
 <template>
-  <div class="flex min-h-[100svh]">
+  <div class="flex min-h-[100svh] max-h-[100svh] overflow-y-auto">
     <TheSidebar />
 
     <main class="main px-5">

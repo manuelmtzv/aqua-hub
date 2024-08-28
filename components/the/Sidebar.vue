@@ -35,9 +35,9 @@ const { t } = useI18n();
 
       <nav :class="['flex flex-col', !isSidebarOpen && 'gap-[0.88rem]']">
         <NuxtLink
-          to="/app"
+          to="/app/feed"
           :class="[
-            'flex items-center gap-[0.62rem]',
+            'flex items-center gap-[0.62rem] link',
             isSidebarOpen ? 'px-3 py-2' : 'border rounded-md p-1',
           ]"
         >
@@ -48,7 +48,7 @@ const { t } = useI18n();
         <NuxtLink
           to="/app"
           :class="[
-            'flex items-center gap-[0.62rem]',
+            'flex items-center gap-[0.62rem] link',
             isSidebarOpen ? 'px-3 py-2' : 'border rounded-md p-1',
           ]"
         >
@@ -62,7 +62,7 @@ const { t } = useI18n();
         <NuxtLink
           to="/app"
           :class="[
-            'flex items-center gap-[0.62rem]',
+            'flex items-center gap-[0.62rem] link',
             isSidebarOpen ? 'px-3 py-2' : 'border rounded-md p-1',
           ]"
         >
@@ -73,7 +73,7 @@ const { t } = useI18n();
         <NuxtLink
           to="/app"
           :class="[
-            'flex items-center gap-[0.62rem]',
+            'flex items-center gap-[0.62rem] link',
             isSidebarOpen ? 'px-3 py-2' : 'border rounded-md p-1',
           ]"
         >
@@ -84,7 +84,7 @@ const { t } = useI18n();
         <NuxtLink
           to="/app"
           :class="[
-            'flex items-center gap-[0.62rem]',
+            'flex items-center gap-[0.62rem] link',
             isSidebarOpen ? 'px-3 py-2' : 'border rounded-md p-1',
           ]"
         >
@@ -101,7 +101,7 @@ const { t } = useI18n();
         <NuxtLink
           to="/app"
           :class="[
-            'flex items-center gap-[0.62rem]',
+            'flex items-center gap-[0.62rem] link',
             isSidebarOpen ? 'px-3 py-2' : 'border rounded-md p-1',
           ]"
         >
@@ -112,7 +112,7 @@ const { t } = useI18n();
         <NuxtLink
           to="/app"
           :class="[
-            'flex items-center gap-[0.62rem]',
+            'flex items-center gap-[0.62rem] link',
             isSidebarOpen ? 'px-3 py-2' : 'border rounded-md p-1',
           ]"
         >
@@ -126,7 +126,7 @@ const { t } = useI18n();
         <NuxtLink
           to="/app"
           :class="[
-            'flex items-center gap-[0.62rem]',
+            'flex items-center gap-[0.62rem] link',
             isSidebarOpen ? 'px-3 py-2' : 'border rounded-md p-1',
           ]"
         >
@@ -137,7 +137,7 @@ const { t } = useI18n();
         <NuxtLink
           to="/app"
           :class="[
-            'flex items-center gap-[0.62rem]',
+            'flex items-center gap-[0.62rem] link',
             isSidebarOpen ? 'px-3 py-2' : 'border rounded-md p-1',
           ]"
         >
@@ -149,4 +149,12 @@ const { t } = useI18n();
   </aside>
 </template>
 
-<style setup></style>
+<style setup>
+.link {
+  @apply rounded-md;
+}
+
+.link[aria-current="page"] {
+  @apply bg-gray-50;
+}
+</style>

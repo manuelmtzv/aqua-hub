@@ -6,7 +6,7 @@ const { t } = useI18n();
 <template>
   <button
     :class="[
-      'flex gap-2 bg-gray-100 rounded-lg h-[2.375rem] items-center',
+      'flex gap-2 bg-gray-100 rounded-lg h-[2.375rem] items-center border-2',
       isSidebarOpen ? 'px-2 py-1' : 'p-1 justify-center',
     ]"
   >

@@ -1,5 +1,7 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+navigateTo("/app/feed");
+</script>
 
 <template>
-  <p>Hola</p>
+  <div></div>
 </template>

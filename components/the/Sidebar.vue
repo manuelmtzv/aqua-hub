@@ -46,7 +46,7 @@ const { t } = useI18n();
         </NuxtLink>
 
         <NuxtLink
-          to="/app"
+          to="/app/people"
           :class="[
             'flex items-center gap-[0.62rem] link',
             isSidebarOpen ? 'px-3 py-2' : 'border rounded-md p-1',
@@ -60,7 +60,7 @@ const { t } = useI18n();
         </NuxtLink>
 
         <NuxtLink
-          to="/app"
+          to="/app/profile"
           :class="[
             'flex items-center gap-[0.62rem] link',
             isSidebarOpen ? 'px-3 py-2' : 'border rounded-md p-1',
@@ -71,7 +71,7 @@ const { t } = useI18n();
         </NuxtLink>
 
         <NuxtLink
-          to="/app"
+          to="/app/notifications"
           :class="[
             'flex items-center gap-[0.62rem] link',
             isSidebarOpen ? 'px-3 py-2' : 'border rounded-md p-1',
@@ -82,7 +82,7 @@ const { t } = useI18n();
         </NuxtLink>
 
         <NuxtLink
-          to="/app"
+          to="/app/settings"
           :class="[
             'flex items-center gap-[0.62rem] link',
             isSidebarOpen ? 'px-3 py-2' : 'border rounded-md p-1',
@@ -99,7 +99,7 @@ const { t } = useI18n();
 
       <nav :class="['flex flex-col', !isSidebarOpen && 'gap-[0.88rem]']">
         <NuxtLink
-          to="/app"
+          to="/app/saved"
           :class="[
             'flex items-center gap-[0.62rem] link',
             isSidebarOpen ? 'px-3 py-2' : 'border rounded-md p-1',
@@ -110,7 +110,7 @@ const { t } = useI18n();
         </NuxtLink>
 
         <NuxtLink
-          to="/app"
+          to="/app/forums"
           :class="[
             'flex items-center gap-[0.62rem] link',
             isSidebarOpen ? 'px-3 py-2' : 'border rounded-md p-1',
@@ -124,7 +124,7 @@ const { t } = useI18n();
         </NuxtLink>
 
         <NuxtLink
-          to="/app"
+          to="/app/topics"
           :class="[
             'flex items-center gap-[0.62rem] link',
             isSidebarOpen ? 'px-3 py-2' : 'border rounded-md p-1',
@@ -135,7 +135,7 @@ const { t } = useI18n();
         </NuxtLink>
 
         <NuxtLink
-          to="/app"
+          to="/app/gallery"
           :class="[
             'flex items-center gap-[0.62rem] link',
             isSidebarOpen ? 'px-3 py-2' : 'border rounded-md p-1',

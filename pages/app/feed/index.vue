@@ -1,7 +1,9 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="">
+  <div class="flex flex-col gap-4">
     <h1>Feed</h1>
+
+    <FeedPostList />
   </div>
 </template>

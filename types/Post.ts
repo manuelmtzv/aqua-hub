@@ -1,5 +1,6 @@
 import type { Forum } from "./Forum";
 import type { Topic } from "./Topic";
+import type { User } from "./User";
 
 export type Post = {
   id: string;
@@ -7,7 +8,7 @@ export type Post = {
   content: string;
   createdAt: string;
   updatedAt: string;
-  author: string;
+  author: User;
   language: string;
   Forum: Forum;
   topic: Topic;

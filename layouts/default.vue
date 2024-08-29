@@ -11,7 +11,7 @@ const dimensions = useElementSize(sidebarRef);
     <TheSidebar ref="sidebarRef" />
 
     <main class="main px-5">
-      <div>
+      <div :style="`margin-left: ${dimensions.width.value + 40}px`">
         <TheMiniHeader />
         <slot />
       </div>

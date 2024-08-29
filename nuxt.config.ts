@@ -23,7 +23,11 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "@vueuse/motion/nuxt",
     "@nuxtjs/i18n",
+    "nuxt-headlessui",
   ],
+  headlessui: {
+    prefix: "Headless",
+  },
   i18n: {
     locales: [
       {

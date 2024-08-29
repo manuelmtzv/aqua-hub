@@ -2,7 +2,10 @@
 
 <template>
   <div class="flex flex-col gap-4 overflow-y-scroll no-scrollbar">
-    <h1>Feed</h1>
+    <div class="flex items-center justify-between">
+      <h1>Feed</h1>
+      <button>Add post</button>
+    </div>
 
     <PostList />
   </div>

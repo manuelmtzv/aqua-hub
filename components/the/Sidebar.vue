@@ -5,7 +5,7 @@ const { isSidebarOpen } = useLayoutState();
 <template>
   <aside
     :class="[
-      'sidebar min-h-[100svh] h-fit max-h-[100svh] px-5 py-6 border-r flex flex-col gap-5 overflow-hidden fixed bg-white z-10',
+      'sidebar min-h-[100svh] max-h-[100svh] px-5 py-6 border-r flex flex-col gap-5 overflow-hidden top-0 bg-white z-10 sticky',
       isSidebarOpen ? 'min-w-[300px]' : 'min-w-[0px]',
     ]"
     ref="sidebarRef"

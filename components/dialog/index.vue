@@ -15,14 +15,14 @@ defineProps<DialogProps>();
     <HeadlessDialog as="div" @close="closeDialog" class="relative z-10">
       <HeadlessTransitionChild
         as="template"
-        enter="duration-200 ease-out"
+        enter="duration-300 ease-out"
         enter-from="opacity-0"
         enter-to="opacity-100"
         leave="duration-200 ease-in"
         leave-from="opacity-100"
         leave-to="opacity-0"
       >
-        <div class="fixed inset-0 bg-black/25" />
+        <div class="fixed inset-0 bg-black/10" />
       </HeadlessTransitionChild>
 
       <div class="fixed inset-0 overflow-y-auto">
@@ -31,7 +31,7 @@ defineProps<DialogProps>();
         >
           <HeadlessTransitionChild
             as="template"
-            enter="duration-200 ease-out"
+            enter="duration-300 ease-out"
             enter-from="opacity-0 scale-95"
             enter-to="opacity-100 scale-100"
             leave="duration-200 ease-in"

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 type ButtonProps = {
-  class?: string;
+  class?: string | string[];
 };
 
 const props = defineProps<ButtonProps>();

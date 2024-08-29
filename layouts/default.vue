@@ -1,10 +1,20 @@
+<script setup lang="ts">
+import { useElementSize } from "@vueuse/core";
+
+const sidebarRef = ref<HTMLElement | null>(null);
+
+const dimensions = useElementSize(sidebarRef);
+</script>
+
 <template>
-  <div class="flex min-h-[100svh] max-h-[100svh] overflow-y-auto">
-    <TheSidebar />
+  <div class="flex min-h-[100svh] overflow-y-auto">
+    <TheSidebar ref="sidebarRef" />
 
     <main class="main px-5">
-      <TheMiniHeader />
-      <slot />
+      <div>
+        <TheMiniHeader />
+        <slot />
+      </div>
     </main>
   </div>
 </template>

@@ -12,7 +12,7 @@ const haveComments = props.post.comments.length > 0;
 
 <template>
   <div>
-    <p class="text-xs font-medium">{{ post.content }}</p>
+    <p class="text-sm font-medium">{{ post.content }}</p>
 
     <nav
       :class="[
@@ -39,6 +39,6 @@ const haveComments = props.post.comments.length > 0;
 
 <style scoped>
 .post-action {
-  @apply flex items-center gap-2 text-sm;
+  @apply flex items-center gap-2 text-sm transition-colors duration-200 dark:text-gray-300 dark:hover:text-gray-100;
 }
 </style>

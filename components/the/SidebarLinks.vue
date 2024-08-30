@@ -12,7 +12,9 @@ const { t } = useI18n();
         to="/app/feed"
         :class="[
           'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link dark:hover:bg-dark-850',
-          isSidebarOpen ? 'px-3 py-1.5' : 'border rounded-md p-1',
+          isSidebarOpen
+            ? 'px-3 py-1.5'
+            : 'border rounded-md p-1 dark:border-transparent',
         ]"
       >
         <Icon name="mdi:newspaper" :class="[!isSidebarOpen && 'text-2xl']" />
@@ -23,7 +25,9 @@ const { t } = useI18n();
         to="/app/people"
         :class="[
           'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link dark:hover:bg-dark-850',
-          isSidebarOpen ? 'px-3 py-1.5' : 'border rounded-md p-1',
+          isSidebarOpen
+            ? 'px-3 py-1.5'
+            : 'border rounded-md p-1 dark:border-transparent',
         ]"
       >
         <Icon
@@ -37,7 +41,9 @@ const { t } = useI18n();
         to="/app/profile"
         :class="[
           'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link dark:hover:bg-dark-850',
-          isSidebarOpen ? 'px-3 py-1.5' : 'border rounded-md p-1',
+          isSidebarOpen
+            ? 'px-3 py-1.5'
+            : 'border rounded-md p-1 dark:border-transparent',
         ]"
       >
         <Icon name="mdi:account" :class="[!isSidebarOpen && 'text-2xl']" />
@@ -48,7 +54,9 @@ const { t } = useI18n();
         to="/app/notifications"
         :class="[
           'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link dark:hover:bg-dark-850',
-          isSidebarOpen ? 'px-3 py-1.5' : 'border rounded-md p-1',
+          isSidebarOpen
+            ? 'px-3 py-1.5'
+            : 'border rounded-md p-1 dark:border-transparent',
         ]"
       >
         <Icon name="mdi:bell" :class="[!isSidebarOpen && 'text-2xl']" />
@@ -59,7 +67,9 @@ const { t } = useI18n();
         to="/app/settings"
         :class="[
           'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link dark:hover:bg-dark-850',
-          isSidebarOpen ? 'px-3 py-1.5' : 'border rounded-md p-1',
+          isSidebarOpen
+            ? 'px-3 py-1.5'
+            : 'border rounded-md p-1 dark:border-transparent',
         ]"
       >
         <Icon name="mdi:settings" :class="[!isSidebarOpen && 'text-2xl']" />
@@ -76,7 +86,9 @@ const { t } = useI18n();
         to="/app/saved"
         :class="[
           'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link dark:hover:bg-dark-850',
-          isSidebarOpen ? 'px-3 py-1.5' : 'border rounded-md p-1',
+          isSidebarOpen
+            ? 'px-3 py-1.5'
+            : 'border rounded-md p-1 dark:border-transparent',
         ]"
       >
         <Icon name="mdi:bookmark" :class="[!isSidebarOpen && 'text-2xl']" />
@@ -87,7 +99,9 @@ const { t } = useI18n();
         to="/app/forums"
         :class="[
           'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link dark:hover:bg-dark-850 dark:hover:bg-dark-850',
-          isSidebarOpen ? 'px-3 py-1.5' : 'border rounded-md p-1',
+          isSidebarOpen
+            ? 'px-3 py-1.5'
+            : 'border rounded-md p-1 dark:border-transparent',
         ]"
       >
         <Icon
@@ -101,7 +115,9 @@ const { t } = useI18n();
         to="/app/topics"
         :class="[
           'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link dark:hover:bg-dark-850',
-          isSidebarOpen ? 'px-3 py-1.5' : 'border rounded-md p-1',
+          isSidebarOpen
+            ? 'px-3 py-1.5'
+            : 'border rounded-md p-1 dark:border-transparent',
         ]"
       >
         <Icon name="mdi:label" :class="[!isSidebarOpen && 'text-2xl']" />
@@ -112,7 +128,9 @@ const { t } = useI18n();
         to="/app/gallery"
         :class="[
           'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link dark:hover:bg-dark-850',
-          isSidebarOpen ? 'px-3 py-1.5' : 'border rounded-md p-1',
+          isSidebarOpen
+            ? 'px-3 py-1.5'
+            : 'border rounded-md p-1 dark:border-transparent',
         ]"
       >
         <Icon name="mdi:image" :class="[!isSidebarOpen && 'text-2xl']" />

@@ -19,12 +19,12 @@ const postTime = moment(post.createdAt).format("LLL");
           class="w-12 h-12 rounded-full"
         /> -->
 
-      <div class="flex flex-col gap-1.5">
-        <h3 class="text-sm font-medium">
+      <div class="flex flex-col gap-1">
+        <h3 class="font-medium">
           {{ `${post.author.name} ${post.author.lastname}` }}
         </h3>
 
-        <span class="text-xs">{{ postTime }}</span>
+        <span class="text-xs dark:text-gray-300">{{ postTime }}</span>
       </div>
     </div>
 

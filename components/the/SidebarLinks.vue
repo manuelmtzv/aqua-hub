@@ -98,7 +98,7 @@ const { t } = useI18n();
       <NuxtLink
         to="/app/forums"
         :class="[
-          'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link dark:hover:bg-dark-850 dark:hover:bg-dark-850',
+          'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link dark:hover:bg-dark-850',
           isSidebarOpen
             ? 'px-3 py-1.5'
             : 'border rounded-md p-1 dark:border-transparent',

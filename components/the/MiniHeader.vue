@@ -7,6 +7,10 @@ const { user } = useAuthState();
   <div class="py-6 flex justify-between items-center min-h-20">
     <TheLogo v-if="!isSidebarOpen" />
 
-    <p v-if="user" class="ml-auto">{{ `${user.name} ${user.lastname}` }}</p>
+    <div class="flex items-center gap-2">
+      <p v-if="user" class="ml-auto">{{ `${user.name} ${user.lastname}` }}</p>
+
+      <AppChangeColorMode />
+    </div>
   </div>
 </template>

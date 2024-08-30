@@ -24,6 +24,7 @@ export default defineNuxtConfig({
     "@vueuse/motion/nuxt",
     "@nuxtjs/i18n",
     "nuxt-headlessui",
+    "@nuxtjs/color-mode",
   ],
   headlessui: {
     prefix: "Headless",

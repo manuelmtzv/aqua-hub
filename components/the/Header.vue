@@ -17,7 +17,6 @@ const mainRoute = computed(() => route.path === "/");
   <header
     :class="[
       'py-6 border-b-2 border-transparent transition-colors duration-300 ease-in-out',
-      !mainRoute && 'border-b-gray-200',
     ]"
   >
     <section class="container flex justify-between gap-4 items-center">
@@ -62,19 +61,19 @@ const mainRoute = computed(() => route.path === "/");
 
 <style scoped>
 .link {
-  @apply px-2 py-1.5 relative text-gray-500;
+  @apply px-2 py-1.5 relative text-gray-500 dark:text-dark-300 transition-colors duration-300 ease-in-out;
 }
 
 .link[aria-current="page"] {
-  @apply text-black transition-colors duration-300 ease-in-out;
+  @apply text-black transition-colors duration-300 ease-in-out dark:text-dark-100;
 }
 
 .link[aria-current="page"]::after {
-  @apply bg-black w-full;
+  @apply bg-black w-full dark:bg-dark-100;
 }
 
 .link::after {
-  @apply absolute left-0 right-0 bottom-0 h-0.5 w-0 bg-gray-500 transition-all duration-300 ease-in-out;
+  @apply absolute left-0 right-0 bottom-0 h-0.5 w-0 bg-gray-500 transition-all duration-300 ease-in-out dark:bg-dark-100;
   content: "";
 }
 

@@ -106,6 +106,7 @@ async function handleSubmit() {
         v-model="registerForm.birthdate"
         :enable-time-picker="false"
         :placeholder="t('authBirthdatePlaceholder')"
+        dark
       />
     </FormLabel>
 
@@ -131,3 +132,9 @@ async function handleSubmit() {
     <FormButton class="button--black">{{ t("registerSubmit") }}</FormButton>
   </form>
 </template>
+
+<style>
+.dp__theme_dark {
+  --dp-background-color: #303030;
+}
+</style>

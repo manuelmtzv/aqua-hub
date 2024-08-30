@@ -18,10 +18,10 @@ const displayableLocales = computed(() =>
     </div>
 
     <template #popper>
-      <div class="flex flex-col min-w-32 p-1">
+      <div class="flex flex-col min-w-32 p-1 dark:bg-dark-800 dark:text-white">
         <button
           v-for="locale in displayableLocales"
-          class="px-4 py-0.5 hover:bg-gray-100 rounded-md text-sm transition-colors duration-300 ease-in-out"
+          class="px-4 py-0.5 hover:bg-gray-100 rounded-md text-sm transition-colors duration-300 ease-in-out dark:hover:bg-dark-700"
           @click="setLocale(locale.code)"
         >
           {{ locale.name }}

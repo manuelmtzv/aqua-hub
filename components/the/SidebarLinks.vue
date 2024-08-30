@@ -11,7 +11,7 @@ const { t } = useI18n();
       <NuxtLink
         to="/app/feed"
         :class="[
-          'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link',
+          'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link dark:hover:bg-dark-850',
           isSidebarOpen ? 'px-3 py-1.5' : 'border rounded-md p-1',
         ]"
       >
@@ -22,7 +22,7 @@ const { t } = useI18n();
       <NuxtLink
         to="/app/people"
         :class="[
-          'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link',
+          'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link dark:hover:bg-dark-850',
           isSidebarOpen ? 'px-3 py-1.5' : 'border rounded-md p-1',
         ]"
       >
@@ -36,7 +36,7 @@ const { t } = useI18n();
       <NuxtLink
         to="/app/profile"
         :class="[
-          'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link',
+          'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link dark:hover:bg-dark-850',
           isSidebarOpen ? 'px-3 py-1.5' : 'border rounded-md p-1',
         ]"
       >
@@ -47,7 +47,7 @@ const { t } = useI18n();
       <NuxtLink
         to="/app/notifications"
         :class="[
-          'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link',
+          'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link dark:hover:bg-dark-850',
           isSidebarOpen ? 'px-3 py-1.5' : 'border rounded-md p-1',
         ]"
       >
@@ -58,7 +58,7 @@ const { t } = useI18n();
       <NuxtLink
         to="/app/settings"
         :class="[
-          'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link',
+          'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link dark:hover:bg-dark-850',
           isSidebarOpen ? 'px-3 py-1.5' : 'border rounded-md p-1',
         ]"
       >
@@ -75,7 +75,7 @@ const { t } = useI18n();
       <NuxtLink
         to="/app/saved"
         :class="[
-          'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link',
+          'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link dark:hover:bg-dark-850',
           isSidebarOpen ? 'px-3 py-1.5' : 'border rounded-md p-1',
         ]"
       >
@@ -86,7 +86,7 @@ const { t } = useI18n();
       <NuxtLink
         to="/app/forums"
         :class="[
-          'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link',
+          'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link dark:hover:bg-dark-850 dark:hover:bg-dark-850',
           isSidebarOpen ? 'px-3 py-1.5' : 'border rounded-md p-1',
         ]"
       >
@@ -100,7 +100,7 @@ const { t } = useI18n();
       <NuxtLink
         to="/app/topics"
         :class="[
-          'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link',
+          'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link dark:hover:bg-dark-850',
           isSidebarOpen ? 'px-3 py-1.5' : 'border rounded-md p-1',
         ]"
       >
@@ -111,7 +111,7 @@ const { t } = useI18n();
       <NuxtLink
         to="/app/gallery"
         :class="[
-          'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link',
+          'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link dark:hover:bg-dark-850',
           isSidebarOpen ? 'px-3 py-1.5' : 'border rounded-md p-1',
         ]"
       >
@@ -124,6 +124,6 @@ const { t } = useI18n();
 
 <style scoped>
 .link[aria-current="page"] {
-  @apply bg-gray-50 shadow-sm;
+  @apply bg-gray-50 shadow-sm dark:bg-dark-850;
 }
 </style>

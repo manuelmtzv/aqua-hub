@@ -1,9 +1,11 @@
+icon
 <script setup lang="ts">
 definePageMeta({
   layout: "public",
 });
 
 const { t } = useI18n();
+const localePath = useLocalePath();
 </script>
 
 <template>
@@ -22,33 +24,36 @@ const { t } = useI18n();
         v-html="t('welcomeIntroduction')"
       ></p>
 
-      <button class="button button--black font-semibold">
+      <NuxtLink
+        :to="localePath('/auth/register')"
+        class="button button--black font-semibold"
+      >
         {{ t("welcomeStart") }}
-      </button>
+      </NuxtLink>
 
       <div class="absolute inset-0 -z-10 icons">
         <img
           src="/svg/home/fishIcon.one.svg"
           alt="Fish Icon"
-          class="one absolute top-32 left-[12%] w-[4.5rem]"
+          class="one absolute top-32 left-[12%] w-[4.5rem] icon"
         />
 
         <img
           src="/svg/home/fishIcon.two.svg"
           alt="Fish Icon"
-          class="two absolute top-24 right-[12%] w-[4.5rem]"
+          class="two absolute top-24 right-[12%] w-[4.5rem] icon"
         />
 
         <img
           src="/svg/home/fishIcon.three.svg"
           alt="Fish Icon"
-          class="three absolute bottom-10 left-[16%] w-[4.5rem]"
+          class="three absolute bottom-10 left-[16%] w-[4.5rem] icon"
         />
 
         <img
           src="/svg/home/fishIcon.four.svg"
           alt="Fish Icon"
-          class="four absolute bottom-28 right-[16%] w-[4.5rem]"
+          class="four absolute bottom-28 right-[16%] w-[4.5rem] icon"
         />
       </div>
     </section>
@@ -95,7 +100,7 @@ const { t } = useI18n();
         <img
           src="/svg/home/multilanguage.svg"
           alt="Multilanguage support icon"
-          class="max-w-[9.75rem]"
+          class="max-w-[9.75rem] filter invert"
         />
       </div>
     </section>
@@ -140,6 +145,10 @@ const { t } = useI18n();
 .icons .four {
   --bounce-offset: -1.9rem;
   animation-duration: 3400ms;
+}
+
+.icon {
+  @apply filter invert;
 }
 
 .feature {

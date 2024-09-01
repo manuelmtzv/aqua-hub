@@ -19,15 +19,21 @@ export default defineNuxtConfig({
   modules: [
     "@nuxtjs/google-fonts",
     "@pinia/nuxt",
-    "floating-vue/nuxt",
+    "@pinia-plugin-persistedstate/nuxt",
     "@nuxt/icon",
     "@vueuse/motion/nuxt",
     "@nuxtjs/i18n",
     "nuxt-headlessui",
     "@nuxtjs/color-mode",
+    "floating-vue/nuxt",
   ],
   headlessui: {
     prefix: "Headless",
+  },
+  piniaPersistedstate: {
+    cookieOptions: {
+      sameSite: "lax",
+    },
   },
   i18n: {
     locales: [
@@ -44,6 +50,9 @@ export default defineNuxtConfig({
     ],
     defaultLocale: "en",
     vueI18n: "./i18n.config.ts",
+  },
+  colorMode: {
+    classSuffix: "",
   },
   postcss: {
     plugins: {

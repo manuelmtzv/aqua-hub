@@ -24,37 +24,35 @@ const mainRoute = computed(() => route.path === "/");
         <h1 class="text-2xl font-semibold">FishKeepersHub</h1>
       </NuxtLink>
 
-      <nav>
-        <ul class="flex gap-2 items-center">
-          <template v-if="!user">
-            <li>
-              <NuxtLink class="link" :to="localePath('/')">{{
-                t("headerHome")
-              }}</NuxtLink>
-            </li>
-            <span class="mx-2">|</span>
-            <li>
-              <NuxtLink class="link" :to="localePath('/auth/login')">{{
-                t("headerLogin")
-              }}</NuxtLink>
-            </li>
-            <li>
-              <NuxtLink class="link" :to="localePath('/auth/register')">{{
-                t("headerRegister")
-              }}</NuxtLink>
-            </li>
-          </template>
+      <ul class="flex gap-2 items-center">
+        <template v-if="!user">
+          <li>
+            <NuxtLink class="link" :to="localePath('/')">{{
+              t("headerHome")
+            }}</NuxtLink>
+          </li>
+          <span class="mx-2">|</span>
+          <li>
+            <NuxtLink class="link" :to="localePath('/auth/login')">{{
+              t("headerLogin")
+            }}</NuxtLink>
+          </li>
+          <li>
+            <NuxtLink class="link" :to="localePath('/auth/register')">{{
+              t("headerRegister")
+            }}</NuxtLink>
+          </li>
+        </template>
 
-          <template v-else>
-            <li>
-              <NuxtLink class="link" :to="localePath('/feed')">Feed</NuxtLink>
-            </li>
-            <li><button @click="handleLogout">Cerrar sesión</button></li>
-          </template>
+        <template v-else>
+          <li>
+            <NuxtLink class="link" :to="localePath('/feed')">Feed</NuxtLink>
+          </li>
+          <li><button @click="handleLogout">Cerrar sesión</button></li>
+        </template>
 
-          <TheLocaleSelect />
-        </ul>
-      </nav>
+        <TheLocaleSelect />
+      </ul>
     </section>
   </header>
 </template>

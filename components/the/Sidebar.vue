@@ -18,6 +18,6 @@ const { isSidebarOpen } = useLayoutState();
 
     <TheSidebarLinks />
 
-    <AppColorSchemaToggle class="mt-auto" />
+    <TheSidebarHelpers />
   </aside>
 </template>

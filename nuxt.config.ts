@@ -26,7 +26,13 @@ export default defineNuxtConfig({
     "nuxt-headlessui",
     "@nuxtjs/color-mode",
     "floating-vue/nuxt",
+    "dayjs-nuxt",
   ],
+  dayjs: {
+    locales: ["en", "es"],
+    defaultLocale: "en",
+    plugins: ["localizedFormat"],
+  },
   headlessui: {
     prefix: "Headless",
   },

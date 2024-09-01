@@ -9,8 +9,6 @@ async function handleLogout() {
   logout();
   await navigateTo("/auth/login");
 }
-
-const mainRoute = computed(() => route.path === "/");
 </script>
 
 <template>
@@ -51,7 +49,7 @@ const mainRoute = computed(() => route.path === "/");
           <li><button @click="handleLogout">Cerrar sesión</button></li>
         </template>
 
-        <TheLocaleSelect />
+        <AppLocaleSelect />
       </ul>
     </section>
   </header>

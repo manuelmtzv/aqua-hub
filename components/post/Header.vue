@@ -1,24 +1,19 @@
 <script setup lang="ts">
-import moment from "moment";
 import type { Post } from "@/types";
+
+const dayjs = useDayjs();
 
 type PostHeaderProps = {
   post: Post;
 };
 
 const { post } = defineProps<PostHeaderProps>();
-const postTime = moment(post.createdAt).format("LLL");
+const postTime = dayjs(post.createdAt).format("LLL");
 </script>
 
 <template>
   <div class="flex justify-between items-center gap-2">
     <div class="flex">
-      <!-- <img
-          :src="post.author.avatar"
-          alt="avatar"
-          class="w-12 h-12 rounded-full"
-        /> -->
-
       <div class="flex flex-col gap-1">
         <h3 class="font-medium">
           {{ `${post.author.name} ${post.author.lastname}` }}

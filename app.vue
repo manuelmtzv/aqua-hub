@@ -1,10 +1,14 @@
 <script setup lang="ts">
-import moment from "moment";
-
+const route = useRoute();
 const { locale } = useI18n();
-moment.locale(locale.value);
+const dayjs = useDayjs();
 
 provideHeadlessUseId(() => useId());
+
+watch(
+  () => route.path,
+  () => dayjs.locale(locale.value)
+);
 </script>
 
 <template>

@@ -1,4 +1,10 @@
 <script setup lang="ts">
+type LocaleSelectProps = {
+  minimal?: boolean;
+};
+
+defineProps<LocaleSelectProps>();
+
 const id = useId();
 const { localeProperties, locales, setLocale } = useI18n();
 
@@ -10,11 +16,16 @@ const displayableLocales = computed(() =>
 <template>
   <VMenu :aria-id="id" :distance="8">
     <div
+      v-if="!minimal"
       class="flex items-center gap-2 border rounded-md px-2 py-1 cursor-pointer"
     >
       <Icon name="mdi:web" />
       <span class="text-sm">{{ localeProperties.name }}</span>
       <Icon name="mdi:chevron-down" />
+    </div>
+
+    <div v-else class="cursor-pointer">
+      <Icon name="mdi:web" />
     </div>
 
     <template #popper>

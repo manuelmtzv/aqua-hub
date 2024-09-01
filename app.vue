@@ -7,7 +7,10 @@ provideHeadlessUseId(() => useId());
 
 watch(
   () => route.path,
-  () => dayjs.locale(locale.value)
+  () => dayjs.locale(locale.value),
+  {
+    immediate: true,
+  }
 );
 </script>
 

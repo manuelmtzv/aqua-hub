@@ -22,7 +22,7 @@ defineProps<DialogProps>();
         leave-from="opacity-100"
         leave-to="opacity-0"
       >
-        <div class="fixed inset-0 bg-black/10 dark:bg-black/25" />
+        <div class="fixed inset-0 bg-black/10 dark:bg-black/35" />
       </HeadlessTransitionChild>
 
       <div class="fixed inset-0 overflow-y-auto">

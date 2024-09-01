@@ -28,7 +28,7 @@ function closeDialog() {
       <input
         type="text"
         class="w-full p-2 border rounded-lg dark:bg-dark-700"
-        placeholder="Search..."
+        :placeholder="$t('searchPlaceholder')"
       />
     </template>
   </Dialog>

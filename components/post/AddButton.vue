@@ -12,10 +12,10 @@ const closeDialog = () => {
       <slot></slot>
     </template>
 
-    <template v-else> Add post </template>
+    <template v-else> {{ $t("addPost") }} </template>
   </Button>
 
   <Dialog :is-open="openDialog" :close-dialog="closeDialog">
-    <template #body> Creating post... </template>
+    <template #body> {{ $t("creatingPost") }} </template>
   </Dialog>
 </template>

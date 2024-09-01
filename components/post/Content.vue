@@ -23,12 +23,12 @@ const haveComments = props.post.comments.length > 0;
       <div class="flex items-center gap-4">
         <button class="post-action">
           <Icon name="mdi:heart" class="text-xl" />
-          Reaccionar
+          {{ $t("postReact") }}
         </button>
 
         <button class="post-action">
           <Icon name="mdi:comment" class="text-xl" />
-          Comentar
+          {{ $t("postComment") }}
         </button>
       </div>
 

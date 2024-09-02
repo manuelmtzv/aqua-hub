@@ -10,7 +10,7 @@ const { post } = defineProps<PostEntry>();
 
 <template>
   <article
-    class="flex flex-col gap-4 p-10 border border-gray-200 rounded-md dark:bg-dark-900 dark:border-dark-800 transition-colors duration-200"
+    class="flex flex-col gap-4 p-10 border border-gray-200 rounded-md dark:bg-dark-900 dark:border-dark-800"
   >
     <PostHeader :post="post" />
 

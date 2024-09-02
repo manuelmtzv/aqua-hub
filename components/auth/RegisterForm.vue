@@ -135,6 +135,6 @@ async function handleSubmit() {
 
 <style>
 .dp__pointer {
-  @apply border dark:bg-dark-800 dark:border-[#464646] transition-colors duration-200;
+  @apply border dark:bg-dark-800 dark:border-[#464646];
 }
 </style>

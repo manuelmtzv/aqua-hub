@@ -12,11 +12,7 @@ async function handleLogout() {
 </script>
 
 <template>
-  <header
-    :class="[
-      'py-6 border-b-2 border-transparent transition-colors duration-300 ease-in-out',
-    ]"
-  >
+  <header :class="['py-6 border-b-2 border-transparent ease-in-out']">
     <section class="container flex justify-between gap-4 items-center">
       <NuxtLink :to="localePath('/')">
         <h1 class="text-2xl font-semibold">FishKeepersHub</h1>
@@ -59,11 +55,11 @@ async function handleLogout() {
 
 <style scoped>
 .link {
-  @apply px-2 py-1.5 relative text-gray-500 dark:text-dark-300 transition-colors duration-300 ease-in-out;
+  @apply px-2 py-1.5 relative text-gray-500 dark:text-dark-300;
 }
 
 .link[aria-current="page"] {
-  @apply text-black transition-colors duration-300 ease-in-out dark:text-dark-100;
+  @apply text-black dark:text-dark-100;
 }
 
 .link[aria-current="page"]::after {

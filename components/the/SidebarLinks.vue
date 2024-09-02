@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const { isSidebarOpen } = useLayoutState();
 const { t } = useI18n();
+const localeRoute = useLocaleRoute();
 </script>
 
 <template>
@@ -10,7 +11,7 @@ const { t } = useI18n();
 
       <nav :class="['flex flex-col gap-2', !isSidebarOpen && 'gap-[0.88rem]']">
         <NuxtLink
-          to="/app/feed"
+          :to="localeRoute('/app/feed')"
           :class="[
             'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link dark:hover:bg-dark-850',
             isSidebarOpen ? 'px-3 py-1.5' : 'rounded-md p-1',
@@ -21,7 +22,7 @@ const { t } = useI18n();
         </NuxtLink>
 
         <NuxtLink
-          to="/app/people"
+          :to="localeRoute('/app/people')"
           :class="[
             'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link dark:hover:bg-dark-850',
             isSidebarOpen ? 'px-3 py-1.5' : 'rounded-md p-1',
@@ -35,7 +36,7 @@ const { t } = useI18n();
         </NuxtLink>
 
         <NuxtLink
-          to="/app/profile"
+          :to="localeRoute('/app/profile')"
           :class="[
             'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link dark:hover:bg-dark-850',
             isSidebarOpen ? 'px-3 py-1.5' : 'rounded-md p-1',
@@ -46,7 +47,7 @@ const { t } = useI18n();
         </NuxtLink>
 
         <NuxtLink
-          to="/app/notifications"
+          :to="localeRoute('/app/notifications')"
           :class="[
             'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link dark:hover:bg-dark-850',
             isSidebarOpen ? 'px-3 py-1.5' : 'rounded-md p-1',
@@ -57,7 +58,7 @@ const { t } = useI18n();
         </NuxtLink>
 
         <NuxtLink
-          to="/app/settings"
+          :to="localeRoute('/app/settings')"
           :class="[
             'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link dark:hover:bg-dark-850',
             isSidebarOpen ? 'px-3 py-1.5' : 'rounded-md p-1',
@@ -74,7 +75,7 @@ const { t } = useI18n();
 
       <nav :class="['flex flex-col gap-2', !isSidebarOpen && 'gap-[0.88rem]']">
         <NuxtLink
-          to="/app/saved"
+          :to="localeRoute('/app/saved')"
           :class="[
             'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link dark:hover:bg-dark-850',
             isSidebarOpen ? 'px-3 py-1.5' : 'rounded-md p-1',
@@ -85,7 +86,7 @@ const { t } = useI18n();
         </NuxtLink>
 
         <NuxtLink
-          to="/app/forums"
+          :to="localeRoute('/app/forums')"
           :class="[
             'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link dark:hover:bg-dark-850',
             isSidebarOpen ? 'px-3 py-1.5' : 'rounded-md p-1',
@@ -99,7 +100,7 @@ const { t } = useI18n();
         </NuxtLink>
 
         <NuxtLink
-          to="/app/topics"
+          :to="localeRoute('/app/topics')"
           :class="[
             'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link dark:hover:bg-dark-850',
             isSidebarOpen ? 'px-3 py-1.5' : 'rounded-md p-1',
@@ -110,7 +111,7 @@ const { t } = useI18n();
         </NuxtLink>
 
         <NuxtLink
-          to="/app/gallery"
+          :to="localeRoute('/app/gallery')"
           :class="[
             'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50 transition-colors link dark:hover:bg-dark-850',
             isSidebarOpen ? 'px-3 py-1.5' : 'rounded-md p-1',

@@ -3,12 +3,13 @@ import VueDatePicker from "@vuepic/vue-datepicker";
 import useVuelidate from "@vuelidate/core";
 import { required, helpers } from "@vuelidate/validators";
 import { useToast } from "vue-toast-notification";
+
 const { t } = useI18n();
 const localePath = useLocalePath();
-
 const { withMessage } = helpers;
 const { register } = useAuth();
 const toast = useToast();
+const $colorMode = useColorMode();
 
 const registerForm = reactive({
   name: "",
@@ -106,7 +107,6 @@ async function handleSubmit() {
         v-model="registerForm.birthdate"
         :enable-time-picker="false"
         :placeholder="t('authBirthdatePlaceholder')"
-        dark
       />
     </FormLabel>
 
@@ -134,7 +134,7 @@ async function handleSubmit() {
 </template>
 
 <style>
-.dp__theme_dark {
-  --dp-background-color: #303030;
+.dp__pointer {
+  @apply border dark:bg-dark-800 dark:border-[#464646] transition-colors duration-200;
 }
 </style>

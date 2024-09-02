@@ -1,9 +1,11 @@
 <script setup lang="ts">
+import type { ClassValue } from "clsx";
+
 export interface DialogProps {
   isOpen: boolean;
   closeDialog: () => void;
   title?: string;
-  panelClass?: string;
+  panelClass?: ClassValue;
   static?: boolean;
 }
 

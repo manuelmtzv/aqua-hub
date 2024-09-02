@@ -15,7 +15,13 @@ const closeDialog = () => {
     <template v-else> {{ $t("addPost") }} </template>
   </Button>
 
-  <Dialog :is-open="openDialog" :close-dialog="closeDialog">
-    <template #body> {{ $t("creatingPost") }} </template>
+  <Dialog
+    :is-open="openDialog"
+    :close-dialog="closeDialog"
+    panel-class="max-w-2xl"
+  >
+    <template #body>
+      <PostForm />
+    </template>
   </Dialog>
 </template>

@@ -17,7 +17,7 @@ const displayableLocales = computed(() =>
   <VMenu :aria-id="id" :distance="8">
     <div
       v-if="!minimal"
-      class="flex items-center gap-2 border rounded-md px-2 py-1 cursor-pointer"
+      class="flex items-center gap-2 border rounded-md px-2 py-1 cursor-pointer min-h-[2.125rem]"
     >
       <Icon name="mdi:web" />
       <span class="text-sm">{{ localeProperties.name }}</span>

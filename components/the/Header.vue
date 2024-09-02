@@ -50,6 +50,8 @@ async function handleLogout() {
         </template>
 
         <AppLocaleSelect />
+
+        <AppThemeToggle />
       </ul>
     </section>
   </header>

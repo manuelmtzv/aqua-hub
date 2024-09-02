@@ -100,7 +100,7 @@ const localePath = useLocalePath();
         <img
           src="/svg/home/multilanguage.svg"
           alt="Multilanguage support icon"
-          class="max-w-[9.75rem] filter invert"
+          class="max-w-[9.75rem] icon"
         />
       </div>
     </section>
@@ -148,7 +148,7 @@ const localePath = useLocalePath();
 }
 
 .icon {
-  @apply filter invert;
+  @apply filter dark:invert;
 }
 
 .feature {

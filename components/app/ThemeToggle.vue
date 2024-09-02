@@ -13,15 +13,17 @@ function toggleColorMode() {
 </script>
 
 <template>
-  <Button :class="cn('w-fit p-1', $props.class)" @click="toggleColorMode">
-    <Icon
-      v-if="$colorMode.value != 'light'"
-      name="ic:baseline-light-mode"
-      class="icon"
-    />
+  <ColorScheme placeholder="..." tag="span">
+    <Button :class="cn('w-fit p-1', $props.class)" @click="toggleColorMode">
+      <Icon
+        v-if="$colorMode.preference != 'light'"
+        name="ic:baseline-light-mode"
+        class="icon"
+      />
 
-    <Icon v-else name="ic:baseline-dark-mode" class="icon" />
-  </Button>
+      <Icon v-else name="ic:baseline-dark-mode" class="icon" />
+    </Button>
+  </ColorScheme>
 </template>
 
 <style scoped>

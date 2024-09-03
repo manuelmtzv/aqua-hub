@@ -15,17 +15,12 @@
 }
 
 body {
-  @apply font-sans antialiased bg-white dark:bg-dark-900 dark:text-white transition-colors duration-200;
+  @apply font-sans antialiased bg-white dark:bg-dark-900 dark:text-white;
 }
 
 #__nuxt {
   @apply flex flex-col min-h-screen;
 }
-
-#__nuxt * {
-  @apply transition-[background-color,border-color] duration-200 ease-in-out;
-}
-
 /*** General ***/
 .container {
   @apply mx-auto px-4 max-w-[100rem];
@@ -39,7 +34,7 @@ body {
 
 /* Forms */
 .input {
-  @apply block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none text-sm focus:border-gray-500 transition-colors duration-200 ease-in-out dark:bg-dark-800 dark:border-dark-700;
+  @apply block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none text-sm focus:border-gray-500 dark:bg-dark-800 dark:border-dark-700;
 }
 .button {
   @apply inline-block px-4 py-2 rounded-md shadow-sm;

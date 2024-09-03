@@ -126,6 +126,9 @@ const localeRoute = useLocaleRoute();
 </template>
 
 <style scoped>
+.link {
+  @apply text-sm;
+}
 .link[aria-current="page"] {
   @apply bg-gray-50 shadow-sm dark:bg-dark-850;
 }

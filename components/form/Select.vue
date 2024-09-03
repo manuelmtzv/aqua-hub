@@ -51,7 +51,9 @@ const selectedValue = computed(() => {
           >
             <li
               :class="[
-                active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                active
+                  ? 'bg-gray-100 dark:bg-dark-700 text-gray-900 dark:text-white'
+                  : 'text-gray-700 dark:text-gray-300',
                 'relative cursor-default select-none py-2 pl-10 pr-4',
               ]"
             >
@@ -64,7 +66,7 @@ const selectedValue = computed(() => {
               >
               <span
                 v-if="selected"
-                class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-600"
+                class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-600 dark:text-white"
               >
                 <Icon name="mdi:check" />
               </span>

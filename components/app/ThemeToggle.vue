@@ -13,7 +13,7 @@ function toggleColorMode() {
 </script>
 
 <template>
-  <ColorScheme placeholder="..." tag="span">
+  <ColorScheme placeholder="..." tag="span" class="min-h-[2.125rem]">
     <Button :class="cn('w-fit p-1', $props.class)" @click="toggleColorMode">
       <Icon
         v-if="$colorMode.preference != 'light'"

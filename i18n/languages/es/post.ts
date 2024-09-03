@@ -6,4 +6,8 @@ export const post = {
   postReact: "Reaccionar",
 
   creatingPost: "Creando publicación...",
+  titlePlaceholder: "Título",
+  contentPlaceholder: "Contenido",
+  forumPlaceholder: "Selecciona un foro",
+  topicPlaceholder: "Selecciona un tema",
 };

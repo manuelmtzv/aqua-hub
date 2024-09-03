@@ -38,13 +38,6 @@ async function handleLogout() {
           </li>
         </template>
 
-        <template v-else>
-          <li>
-            <NuxtLink class="link" :to="localePath('/feed')">Feed</NuxtLink>
-          </li>
-          <li><button @click="handleLogout">Cerrar sesión</button></li>
-        </template>
-
         <AppLocaleSelect />
 
         <AppThemeToggle />

@@ -22,7 +22,7 @@ const selectedValue = computed(() => {
   <HeadlessListbox v-model="modelValue">
     <div class="relative mt-1">
       <HeadlessListboxButton
-        class="relative w-full cursor-default border text-sm border-gray-300 rounded-md shadow-sm bg-white py-2 pl-4 pr-10 text-left focus:outline-none focus-visible:border-slate-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-300"
+        class="relative w-full cursor-default border text-sm border-gray-300 rounded-md shadow-sm bg-white dark:bg-dark-800 dark:border-dark-700 py-2 pl-4 pr-10 text-left focus:outline-none focus-visible:border-slate-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-300"
       >
         <span :class="['block truncate', !selectedValue && 'text-gray-400']">{{
           selectedValue?.name ?? defaultValue
@@ -40,7 +40,7 @@ const selectedValue = computed(() => {
         leave-to-class="opacity-0"
       >
         <HeadlessListboxOptions
-          class="absolute mt-1 max-h-40 w-full overflow-auto rounded-md bg-white py-1 text-sm shadow-lg ring-1 ring-black/5 focus:outline-none z-40"
+          class="absolute mt-1 max-h-40 w-full overflow-auto rounded-md bg-white dark:bg-dark-850 py-1 text-sm shadow-lg ring-1 ring-black/5 focus:outline-none z-40"
         >
           <HeadlessListboxOption
             v-slot="{ active, selected }"

@@ -28,6 +28,7 @@ export default defineNuxtConfig({
     "floating-vue/nuxt",
     "dayjs-nuxt",
   ],
+  plugins: ["@/plugins/api.ts"],
   dayjs: {
     locales: ["en", "es"],
     defaultLocale: "en",
@@ -55,6 +56,11 @@ export default defineNuxtConfig({
       },
     ],
     defaultLocale: "en",
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: "i18n_redirected",
+      redirectOn: "root", // recommended
+    },
     vueI18n: "./i18n.config.ts",
   },
   colorMode: {

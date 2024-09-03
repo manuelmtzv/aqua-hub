@@ -7,6 +7,7 @@ type SelectOption = {
 type SelectProps = {
   options: SelectOption[];
   defaultValue?: number | string;
+  disabled?: boolean;
 };
 
 const props = defineProps<SelectProps>();
@@ -19,7 +20,7 @@ const selectedValue = computed(() => {
 </script>
 
 <template>
-  <HeadlessListbox v-model="modelValue">
+  <HeadlessListbox v-model="modelValue" :disabled="disabled">
     <div class="relative mt-1">
       <HeadlessListboxButton
         class="relative w-full cursor-default border text-sm border-gray-300 rounded-md shadow-sm bg-white dark:bg-dark-800 dark:border-dark-700 py-2 pl-4 pr-10 text-left focus:outline-none focus-visible:border-slate-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-300"

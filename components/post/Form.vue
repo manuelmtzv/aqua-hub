@@ -1,5 +1,14 @@
 <script setup lang="ts">
-const { data: forumsData, error: forumsError } = useForums();
+const {
+  data: forumsData,
+  error: forumsError,
+  status: forumsStatus,
+} = useForums();
+const {
+  data: topicsData,
+  error: topicsError,
+  status: topicsStatus,
+} = useTopics();
 
 const postForm = reactive({
   title: "",
@@ -15,6 +24,17 @@ const displayedForums = computed(() => {
       return {
         value: forum.id,
         name: forum.translations[0].title,
+      };
+    }) ?? []
+  );
+});
+
+const displayedTopics = computed(() => {
+  return (
+    topicsData.value?.data.map((topic) => {
+      return {
+        value: topic.id,
+        name: topic.translations[0].title,
       };
     }) ?? []
   );
@@ -43,13 +63,15 @@ const displayedForums = computed(() => {
       <FormSelect
         :options="displayedForums"
         :default-value="$t('forumPlaceholder')"
-        v-model="postForm.language"
+        v-model="postForm.forum"
+        :disabled="forumsStatus === 'pending'"
       />
 
       <FormSelect
-        :options="displayedForums"
-        :default-value="$t('forumPlaceholder')"
-        v-model="postForm.language"
+        :options="displayedTopics"
+        :default-value="$t('topicPlaceholder')"
+        v-model="postForm.topic"
+        :disabled="topicsStatus === 'pending'"
       />
     </FormFieldsetGrid>
   </form>

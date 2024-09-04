@@ -7,7 +7,7 @@ export const forumRepository = <T>(fetch?: $Fetch<T, NitroFetchRequest>) => {
   }
 
   return {
-    getForums(): Promise<ListResponse<Forum>> {
+    async getForums(): Promise<ListResponse<Forum>> {
       return fetch<ListResponse<Forum>>("/forums");
     },
   };

@@ -10,11 +10,18 @@ export interface DialogProps {
 }
 
 defineProps<DialogProps>();
+
+const modalFocus = ref<HTMLElement | null>(null);
 </script>
 
 <template>
   <HeadlessTransitionRoot appear :show="isOpen" as="template">
-    <HeadlessDialog as="div" @close="closeDialog" class="relative z-10">
+    <HeadlessDialog
+      as="div"
+      @close="closeDialog"
+      class="relative z-10"
+      :initialFocus="modalFocus"
+    >
       <HeadlessTransitionChild
         as="template"
         enter="duration-300 ease-out"
@@ -47,6 +54,7 @@ defineProps<DialogProps>();
                   $props.panelClass
                 )
               "
+              ref="modalFocus"
             >
               <HeadlessDialogTitle
                 v-if="title"

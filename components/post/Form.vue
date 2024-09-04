@@ -1,14 +1,12 @@
 <script setup lang="ts">
-const {
-  data: forumsData,
-  error: forumsError,
-  status: forumsStatus,
-} = useForums();
-const {
-  data: topicsData,
-  error: topicsError,
-  status: topicsStatus,
-} = useTopics();
+import { forumRepository, topicRepository } from "@/repository";
+
+const { data: forumsData, status: forumsStatus } = await useAsyncData(() =>
+  forumRepository().getForums()
+);
+const { data: topicsData, status: topicsStatus } = await useAsyncData(() =>
+  topicRepository().getTopics()
+);
 
 const postForm = reactive({
   title: "",

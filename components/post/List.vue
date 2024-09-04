@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { postRepository } from "@/repositories/post.repository";
+import { postRepository } from "@/repository";
 
 const postRepo = postRepository();
 

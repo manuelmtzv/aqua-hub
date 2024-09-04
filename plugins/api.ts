@@ -1,14 +1,16 @@
-export default defineNuxtPlugin((nuxtApp) => {
-  const runtimeConfig = useRuntimeConfig();
+export default defineNuxtPlugin({
+  name: "FishkeepersHub Api Plugin",
+  setup() {
+    const { API_BASE_URL } = useRuntimeConfig().public;
 
-  const api = $fetch.create({
-    baseURL: runtimeConfig.public.API_BASE_URL,
-    onRequest({ request, options, error }) {},
-    async onResponseError({ response }) {},
-  });
-  return {
-    provide: {
-      api,
-    },
-  };
+    const api = $fetch.create({
+      baseURL: API_BASE_URL,
+    });
+
+    return {
+      provide: {
+        api,
+      },
+    };
+  },
 });

@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import type { Post, ListResponse } from "@/types";
+import { postRepository } from "@/repository/post.repository";
+const { $api } = useNuxtApp();
 
-const runtimeConfig = useRuntimeConfig();
+const postRepo = postRepository($api);
 
-const { data } = await useFetch<ListResponse<Post>>(
-  runtimeConfig.public.API_BASE_URL + "/posts"
-);
+const { data } = await useAsyncData(() => postRepo.getPosts());
 </script>
 
 <template>

@@ -1,5 +1,4 @@
-/** @type {import('tailwindcss').Config} */
-export default {
+/** @type {import('tailwindcss').Config} */ export default {
   darkMode: "class",
   content: [
     "./components/**/*.{js,vue,ts}",
@@ -24,9 +23,7 @@ export default {
         "dark-900": "#0F0F0F",
       },
     },
-    fontFamily: {
-      sans: ['"Montserrat"', "sans-serif"],
-    },
+    fontFamily: { sans: ['"Montserrat"', "sans-serif"] },
   },
   plugins: [],
 };

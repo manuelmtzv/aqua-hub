@@ -12,7 +12,7 @@ export default defineNuxtConfig({
     },
   },
   css: [
-    "~/assets/css/main.css",
+    "@/assets/css/tailwind.css",
     "vue-toast-notification/dist/theme-bootstrap.css",
     "@vuepic/vue-datepicker/dist/main.css",
   ],
@@ -27,6 +27,7 @@ export default defineNuxtConfig({
     "nuxt-headlessui",
     "floating-vue/nuxt",
     "dayjs-nuxt",
+    "@nuxtjs/tailwindcss",
   ],
   plugins: ["@/plugins/api.ts"],
   dayjs: {

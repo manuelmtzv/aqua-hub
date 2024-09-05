@@ -29,7 +29,6 @@ export default defineNuxtConfig({
     "dayjs-nuxt",
     "@nuxtjs/tailwindcss",
   ],
-  plugins: ["@/plugins/api.ts"],
   dayjs: {
     locales: ["en", "es"],
     defaultLocale: "en",

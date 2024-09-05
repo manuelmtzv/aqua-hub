@@ -54,7 +54,6 @@ const modalFocus = ref<HTMLElement | null>(null);
                   $props.panelClass
                 )
               "
-              ref="modalFocus"
             >
               <HeadlessDialogTitle
                 v-if="title"

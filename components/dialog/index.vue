@@ -10,18 +10,11 @@ export interface DialogProps {
 }
 
 defineProps<DialogProps>();
-
-const modalFocus = ref<HTMLElement | null>(null);
 </script>
 
 <template>
   <HeadlessTransitionRoot appear :show="isOpen" as="template">
-    <HeadlessDialog
-      as="div"
-      @close="closeDialog"
-      class="relative z-10"
-      :initialFocus="modalFocus"
-    >
+    <HeadlessDialog as="div" @close="closeDialog" class="relative z-10">
       <HeadlessTransitionChild
         as="template"
         enter="duration-300 ease-out"

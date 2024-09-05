@@ -22,10 +22,11 @@ export default defineNuxtConfig({
     "@pinia-plugin-persistedstate/nuxt",
     "@vueuse/motion/nuxt",
     "@nuxtjs/i18n",
+    "@nuxt/icon",
+    "@nuxtjs/color-mode",
     "nuxt-headlessui",
     "floating-vue/nuxt",
     "dayjs-nuxt",
-    "@nuxt/ui",
   ],
   plugins: ["@/plugins/api.ts"],
   dayjs: {

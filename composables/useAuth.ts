@@ -8,11 +8,11 @@ import type {
 export const useAuth = () => {
   const authState = useAuthState();
   const { updateTokens } = authState;
-
   const runtimeConfig = useRuntimeConfig();
+  const fetch = useNuxtApp().$api;
 
   async function login(loginForm: LoginRequest) {
-    const response = await $fetch<LoginResponse>(
+    const response = await fetch<LoginResponse>(
       `${runtimeConfig.public.API_BASE_URL}/auth/login`,
       {
         method: "POST",
@@ -30,7 +30,7 @@ export const useAuth = () => {
   }
 
   async function register(registerForm: RegisterRequest) {
-    const response = await $fetch<LoginResponse>(
+    const response = await fetch<LoginResponse>(
       `${runtimeConfig.public.API_BASE_URL}/auth/register`,
       {
         method: "POST",
@@ -52,7 +52,7 @@ export const useAuth = () => {
   }
 
   async function validate() {
-    const user = await $fetch<ValidateResponse>(
+    const user = await fetch<ValidateResponse>(
       `${runtimeConfig.public.API_BASE_URL}/auth/validate`,
       {
         headers: {
@@ -72,7 +72,7 @@ export const useAuth = () => {
       throw new Error("No tokens available");
     }
 
-    const response = await $fetch<LoginResponse>(
+    const response = await fetch<LoginResponse>(
       `${runtimeConfig.public.API_BASE_URL}/auth/refresh`,
       {
         method: "POST",

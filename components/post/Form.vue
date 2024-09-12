@@ -21,7 +21,7 @@ const displayedForums = computed(() => {
     forumsData.value?.data.map((forum) => {
       return {
         value: forum.id,
-        name: forum.translations[0].title,
+        name: forum.title,
       };
     }) ?? []
   );
@@ -32,7 +32,7 @@ const displayedTopics = computed(() => {
     topicsData.value?.data.map((topic) => {
       return {
         value: topic.id,
-        name: topic.translations[0].title,
+        name: topic.title,
       };
     }) ?? []
   );

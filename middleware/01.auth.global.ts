@@ -3,6 +3,8 @@ import { useToast } from "vue-toast-notification";
 const whitelist = ["/", "/about", "/auth/login", "/auth/register"];
 
 export default defineNuxtRouteMiddleware(async (to, from) => {
+  const localePath = useLocalePath();
+
   const langPattern = /^\/[a-z]{2}(\/|$)/;
   let path = to.path;
 
@@ -19,7 +21,7 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
   const toast = useToast();
 
   if (!authState.availableTokens.value) {
-    return navigateTo("/auth/login");
+    return navigateTo(localePath("/auth/login"));
   }
 
   try {
@@ -29,7 +31,7 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
       await refresh();
     } catch (refreshError) {
       toast.warning("Your session has expired. Please log in again.");
-      return navigateTo("/auth/login");
+      return navigateTo(localePath("/auth/login"));
     }
   }
 });

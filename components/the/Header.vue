@@ -7,7 +7,7 @@ const localePath = useLocalePath();
 
 async function handleLogout() {
   logout();
-  await navigateTo("/auth/login");
+  await navigateTo(localePath("/auth/login"));
 }
 </script>
 

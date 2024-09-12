@@ -1,5 +1,7 @@
 <script setup lang="ts">
-navigateTo("/app/feed");
+const localePath = useLocalePath();
+
+navigateTo(localePath("/app/feed"));
 </script>
 
 <template>

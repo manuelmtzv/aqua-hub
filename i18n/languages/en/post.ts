@@ -5,9 +5,10 @@ export const post = {
   postComment: "Comment",
   postReact: "React",
 
-  creatingPost: "Creating post...",
+  creatingPost: "Creating post",
   titlePlaceholder: "Title",
   contentPlaceholder: "Content",
   forumPlaceholder: "Select a forum",
   topicPlaceholder: "Select a topic",
+  submit: "Submit post",
 };

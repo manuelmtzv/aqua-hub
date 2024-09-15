@@ -22,18 +22,26 @@ async function handleLogout() {
         <template v-if="!user">
           <li>
             <NuxtLink class="link" :to="localePath('/')">{{
-              t("headerHome")
+              t("header.home")
             }}</NuxtLink>
           </li>
           <span class="mx-2">|</span>
           <li>
             <NuxtLink class="link" :to="localePath('/auth/login')">{{
-              t("headerLogin")
+              t("header.login")
             }}</NuxtLink>
           </li>
           <li>
             <NuxtLink class="link" :to="localePath('/auth/register')">{{
-              t("headerRegister")
+              t("header.register")
+            }}</NuxtLink>
+          </li>
+        </template>
+
+        <template v-else>
+          <li>
+            <NuxtLink class="link" :to="localePath('/app')">{{
+              t("header.enter")
             }}</NuxtLink>
           </li>
         </template>

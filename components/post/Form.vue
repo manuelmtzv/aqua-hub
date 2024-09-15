@@ -40,38 +40,52 @@ const displayedTopics = computed(() => {
 </script>
 
 <template>
-  <form action="" class="flex flex-col gap-2">
-    <h2>{{ $t("creatingPost") }}</h2>
+  <form action="" class="flex flex-col gap-4">
+    <h2 class="font-medium text-lg">{{ $t("post.creatingPost") }}</h2>
 
     <FormLabel label="">
       <FormTextInput
         v-model="postForm.title"
-        :placeholder="$t('titlePlaceholder')"
+        :placeholder="$t('post.titlePlaceholder')"
       />
     </FormLabel>
 
     <FormLabel label="">
       <FormTextarea
         v-model="postForm.content"
-        :placeholder="$t('contentPlaceholder')"
+        :placeholder="$t('post.contentPlaceholder')"
       />
     </FormLabel>
 
-    <FormFieldsetGrid>
+    <FormFieldsetGrid class="gap-4">
       <FormSelect
         :options="displayedForums"
-        :default-value="$t('forumPlaceholder')"
+        :default-value="$t('post.forumPlaceholder')"
         v-model="postForm.forum"
         :disabled="forumsStatus === 'pending'"
       />
 
       <FormSelect
         :options="displayedTopics"
-        :default-value="$t('topicPlaceholder')"
+        :default-value="$t('post.topicPlaceholder')"
         v-model="postForm.topic"
         :disabled="topicsStatus === 'pending'"
       />
     </FormFieldsetGrid>
+
+    <BaseDropdown title="Language">
+      <!-- <FormRadioGroup v-model="postForm.language">
+        <FormRadio value="en" label="English" />
+        <FormRadio value="es" label="Spanish" />
+        <FormRadio value="fr" label="French" />
+      </FormRadioGroup> -->
+
+      Hola
+    </BaseDropdown>
+
+    <FormButton class="button--black text-sm">
+      {{ $t("post.submit") }}
+    </FormButton>
   </form>
 </template>
 

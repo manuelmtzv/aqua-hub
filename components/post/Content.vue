@@ -11,24 +11,26 @@ const haveComments = props.post.comments.length > 0;
 </script>
 
 <template>
-  <div>
+  <div class="flex flex-col gap-4">
+    <h3 class="font-medium">{{ post.title }}</h3>
+
     <p class="text-sm font-medium">{{ post.content }}</p>
 
     <nav
       :class="[
-        'flex items-center justify-between gap-2 mt-4',
+        'flex items-center justify-between gap-2',
         haveComments && 'pb-3 border-b',
       ]"
     >
       <div class="flex items-center gap-4">
         <button class="post-action">
           <Icon name="mdi:heart" class="text-xl" />
-          {{ $t("postReact") }}
+          {{ $t("post.postReact") }}
         </button>
 
         <button class="post-action">
           <Icon name="mdi:comment" class="text-xl" />
-          {{ $t("postComment") }}
+          {{ $t("post.postComment") }}
         </button>
       </div>
 

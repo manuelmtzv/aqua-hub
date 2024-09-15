@@ -1,10 +1,8 @@
-icon
 <script setup lang="ts">
 definePageMeta({
   layout: "public",
 });
 
-const { t } = useI18n();
 const localePath = useLocalePath();
 </script>
 
@@ -13,22 +11,22 @@ const localePath = useLocalePath();
     <section
       class="presentation relative flex flex-col items-center gap-12 pt-16 pb-24 text-center container min-h-[calc(100svh-5.125rem)]"
     >
-      <p class="text-3xl font-bold join">{{ t("welcomeSubtitle") }}</p>
+      <p class="text-3xl font-bold join">{{ $t("welcome.subtitle") }}</p>
 
       <h1 class="max-w-[48rem] text-7xl font-black leading-tight">
-        {{ t("welcome") }}
+        {{ $t("welcome.welcome") }}
       </h1>
 
       <p
         class="max-w-[48rem] text-3xl text-[1.75rem]"
-        v-html="t('welcomeIntroduction')"
+        v-html="$t('welcome.introduction')"
       ></p>
 
       <NuxtLink
         :to="localePath('/auth/register')"
-        class="button button--black font-semibold"
+        class="inline-block px-4 py-2 rounded-md shadow-sm transition-colors duration-200 button--black font-semibold"
       >
-        {{ t("welcomeStart") }}
+        {{ $t("welcome.start") }}
       </NuxtLink>
 
       <div class="absolute inset-0 -z-10 icons">
@@ -63,23 +61,25 @@ const localePath = useLocalePath();
         class="p-10 bg-green-900 rounded-lg text-white grid grid-cols-3 gap-12"
       >
         <div class="feature">
-          <h4 class="text-xl font-bold">{{ t("welcomeForumsTitle") }}</h4>
+          <h4 class="text-xl font-bold">{{ $t("welcome.forumsTitle") }}</h4>
           <p class="text-lg">
-            {{ t("welcomeForumsDescription") }}
+            {{ $t("welcome.forumsDescription") }}
           </p>
         </div>
 
         <div class="feature">
-          <h4 class="text-xl font-bold">{{ t("welcomeInteractionsTitle") }}</h4>
+          <h4 class="text-xl font-bold">
+            {{ $t("welcome.interactionsTitle") }}
+          </h4>
           <p class="text-lg">
-            {{ t("welcomeInteractionsDescription") }}
+            {{ $t("welcome.interactionsDescription") }}
           </p>
         </div>
 
         <div class="feature">
-          <h4 class="text-xl font-bold">{{ t("welcomeInterestsTitle") }}</h4>
+          <h4 class="text-xl font-bold">{{ $t("welcome.interestsTitle") }}</h4>
           <p class="text-lg">
-            {{ t("welcomeInterestsDescription") }}
+            {{ $t("welcome.interestsDescription") }}
           </p>
         </div>
       </div>
@@ -89,11 +89,11 @@ const localePath = useLocalePath();
       <div class="p-10 flex gap-5">
         <div class="flex flex-col gap-2">
           <h2 class="text-2xl font-bold">
-            {{ t("welcomeLanguagesTitle") }}
+            {{ $t("welcome.languagesTitle") }}
           </h2>
 
           <p class="text-xl">
-            {{ t("welcomeLanguagesDescription") }}
+            {{ $t("welcome.languagesDescription") }}
           </p>
         </div>
 

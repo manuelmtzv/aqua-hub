@@ -7,8 +7,8 @@ const { withMessage } = helpers;
 const { login } = useAuth();
 const toast = useToast();
 const logging = ref(false);
-const { t } = useI18n();
 const localePath = useLocalePath();
+const { t } = useI18n();
 
 const loginForm = reactive({
   identifier: "",
@@ -17,10 +17,10 @@ const loginForm = reactive({
 
 const rules = {
   identifier: {
-    required: withMessage(t("authIdentifierRequired"), required),
+    required: withMessage(t("auth.identifierRequired"), required),
   },
   password: {
-    required: withMessage(t("authPasswordRequired"), required),
+    required: withMessage(t("auth.passwordRequired"), required),
   },
 };
 
@@ -34,7 +34,7 @@ async function handleSubmit() {
 
   try {
     await login(loginForm);
-    toast.success(t("loginSuccess"));
+    toast.success(t("auth.loginSuccess"));
 
     await navigateTo(localePath("/app"));
   } catch (error) {
@@ -47,39 +47,41 @@ async function handleSubmit() {
 
 <template>
   <form @submit.prevent="handleSubmit" class="auth-form">
-    <h2 class="text-center font-semibold text-xl">{{ t("loginTitle") }}</h2>
+    <h2 class="text-center font-semibold text-xl">
+      {{ $t("auth.loginTitle") }}
+    </h2>
 
     <FormLabel
-      :label="t('authIdentifier')"
+      :label="$t('auth.identifier')"
       :error="v$.identifier.$errors.at(0)?.$message"
     >
       <FormTextInput
         v-model="loginForm.identifier"
-        :placeholder="t('authIdentifierPlaceholder')"
+        :placeholder="$t('auth.identifierPlaceholder')"
       />
     </FormLabel>
 
     <FormLabel
-      :label="t('authPassword')"
+      :label="$t('auth.password')"
       :error="v$.password.$errors.at(0)?.$message"
     >
       <FormTextInput
         v-model="loginForm.password"
         type="password"
-        :placeholder="t('authPasswordPlaceholder')"
+        :placeholder="$t('auth.passwordPlaceholder')"
       />
     </FormLabel>
 
     <p class="text-xs font-medium">
-      {{ t("loginNoAccount") }}
+      {{ $t("auth.loginNoAccount") }}
       <nuxt-link class="font-semibold" to="/auth/register">{{
-        t("loginNoAccountLink")
+        $t("auth.loginNoAccountLink")
       }}</nuxt-link
       >.
     </p>
 
     <FormButton class="button--black mt-2" :disabled="logging">
-      {{ t("loginSubmit") }}
+      {{ $t("auth.loginSubmit") }}
     </FormButton>
   </form>
 </template>

@@ -1,6 +1,5 @@
 <script setup lang="ts">
 const { isSidebarOpen } = useLayoutState();
-const { t } = useI18n();
 
 const openDialog = ref(false);
 
@@ -19,7 +18,7 @@ function closeDialog() {
   >
     <Icon name="mdi:magnify" class="text-xl" />
     <span v-if="isSidebarOpen" class="text-sm">{{
-      t("navigationSearch")
+      $t("navigation.navigationSearch")
     }}</span>
   </Button>
 
@@ -28,7 +27,7 @@ function closeDialog() {
       <input
         type="text"
         class="w-full p-2 border rounded-lg dark:bg-dark-700"
-        :placeholder="$t('searchPlaceholder')"
+        :placeholder="$t('navigation.searchPlaceholder')"
       />
     </template>
   </Dialog>

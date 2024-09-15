@@ -6,10 +6,10 @@ import { post } from "./post";
 import { app } from "./app";
 
 export const en = {
-  ...app,
-  ...welcome,
-  ...auth,
-  ...header,
-  ...navigation,
-  ...post,
+  app,
+  welcome,
+  auth,
+  header,
+  navigation,
+  post,
 };

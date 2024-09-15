@@ -22,22 +22,22 @@ const registerForm = reactive({
 
 const rules = {
   name: {
-    required: withMessage(t("authNameRequired"), required),
+    required: withMessage(t("auth.nameRequired"), required),
   },
   lastname: {
-    required: withMessage(t("authLastnameRequired"), required),
+    required: withMessage(t("auth.lastnameRequired"), required),
   },
   username: {
-    required: withMessage(t("authUsernameRequired"), required),
+    required: withMessage(t("auth.usernameRequired"), required),
   },
   email: {
-    required: withMessage(t("authEmailRequired"), required),
+    required: withMessage(t("auth.emailRequired"), required),
   },
   birthdate: {
-    required: withMessage(t("authBirthdateRequired"), required),
+    required: withMessage(t("auth.birthdateRequired"), required),
   },
   password: {
-    required: withMessage(t("authIdentifierRequired"), required),
+    required: withMessage(t("auth.identifierRequired"), required),
   },
 };
 
@@ -49,7 +49,7 @@ async function handleSubmit() {
 
   try {
     await register(registerForm);
-    toast.success(t("registerSuccess"));
+    toast.success($t("auth.registerSuccess"));
 
     await navigateTo(localePath("/app"));
   } catch (error) {
@@ -59,82 +59,90 @@ async function handleSubmit() {
 </script>
 
 <template>
-  <form @submit.prevent="handleSubmit" class="auth-form">
+  <form @submit.prevent="handleSubmit" class="auth-form" autocomplete="off">
     <h2 class="text-center font-semibold text-xl">Registrarse</h2>
 
-    <FormLabel :label="t('authName')" :error="v$.name.$errors.at(0)?.$message">
+    <FormLabel
+      :label="$t('auth.name')"
+      :error="v$.name.$errors.at(0)?.$message"
+    >
       <FormTextInput
         v-model="registerForm.name"
-        :placeholder="t('authNamePlaceholder')"
+        :placeholder="$t('auth.namePlaceholder')"
       />
     </FormLabel>
 
     <FormLabel
-      :label="t('authLastname')"
+      :label="$t('auth.lastname')"
       :error="v$.lastname.$errors.at(0)?.$message"
     >
       <FormTextInput
         v-model="registerForm.lastname"
-        :placeholder="t('authLastnamePlaceholder')"
+        :placeholder="$t('auth.lastnamePlaceholder')"
       />
     </FormLabel>
 
     <FormLabel
-      :label="t('authUsername')"
+      :label="$t('auth.username')"
       :error="v$.username.$errors.at(0)?.$message"
     >
       <FormTextInput
         v-model="registerForm.username"
-        :placeholder="t('authUsernamePlaceholder')"
+        :placeholder="$t('auth.usernamePlaceholder')"
       />
     </FormLabel>
 
     <FormLabel
-      :label="t('authEmail')"
+      :label="$t('auth.email')"
       :error="v$.email.$errors.at(0)?.$message"
     >
       <FormTextInput
         v-model="registerForm.email"
-        :placeholder="t('authEmailPlaceholder')"
+        :placeholder="$t('auth.emailPlaceholder')"
       />
     </FormLabel>
 
     <FormLabel
-      :label="t('authBirthdate')"
+      :label="$t('auth.birthdate')"
       :error="v$.birthdate.$errors.at(0)?.$message"
     >
       <VueDatePicker
         v-model="registerForm.birthdate"
         :enable-time-picker="false"
-        :placeholder="t('authBirthdatePlaceholder')"
+        :placeholder="$t('auth.birthdatePlaceholder')"
       />
     </FormLabel>
 
     <FormLabel
-      :label="t('authPassword')"
+      :label="$t('auth.password')"
       :error="v$.password.$errors.at(0)?.$message"
     >
       <FormTextInput
         v-model="registerForm.password"
         type="password"
-        :placeholder="t('authPasswordPlaceholder')"
+        :placeholder="$t('auth.passwordPlaceholder')"
       />
     </FormLabel>
 
     <p class="text-xs font-medium">
-      {{ t("registerAlready") }}
+      {{ $t("auth.registerAlready") }}
       <nuxt-link class="font-semibold" to="/auth/login">{{
-        t("registerAlreadyLink")
+        $t("auth.registerAlreadyLink")
       }}</nuxt-link
       >.
     </p>
 
-    <FormButton class="button--black">{{ t("registerSubmit") }}</FormButton>
+    <FormButton class="button--black">{{
+      $t("auth.registerSubmit")
+    }}</FormButton>
   </form>
 </template>
 
 <style>
-.dp__pointer {
+.dp__outer_menu_wrap {
+  @apply dark:bg-dark-800;
+}
+.dp__pointer.dp__input_readonly {
   @apply border dark:bg-dark-800 dark:border-[#464646];
 }
 </style>

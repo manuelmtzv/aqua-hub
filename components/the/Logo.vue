@@ -8,10 +8,10 @@ defineProps<LogoProps>();
 </script>
 
 <template>
-  <span :class="[cn('text-xl font-medium', leftClass)]"
+  <NuxtLink to="/" :class="[cn('text-xl font-medium', leftClass)]"
     >Fishkeepers<span :class="[cn('text-xl underline font-medium', rightClass)]"
       >Hub</span
-    ></span
+    ></NuxtLink
   >
 </template>
 

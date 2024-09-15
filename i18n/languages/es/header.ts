@@ -1,5 +1,6 @@
 export const header = {
-  headerHome: "Inicio",
-  headerLogin: "Iniciar sesión",
-  headerRegister: "Registrarse",
+  home: "Inicio",
+  login: "Iniciar sesión",
+  register: "Registrarse",
+  enter: "Ir a la aplicación",
 };

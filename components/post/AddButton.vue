@@ -12,13 +12,13 @@ const closeDialog = () => {
       <slot></slot>
     </template>
 
-    <template v-else> {{ $t("addPost") }} </template>
+    <template v-else> {{ $t("post.addPost") }} </template>
   </Button>
 
   <Dialog
     :is-open="openDialog"
     :close-dialog="closeDialog"
-    panel-class="max-w-2xl"
+    panel-class="max-w-3xl"
   >
     <template #body>
       <PostForm />

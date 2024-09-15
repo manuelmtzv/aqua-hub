@@ -1,13 +1,12 @@
 <script setup lang="ts">
 const { isSidebarOpen } = useLayoutState();
-const { t } = useI18n();
 const localeRoute = useLocaleRoute();
 </script>
 
 <template>
   <section class="flex flex-col gap-5 overflow-y-auto">
     <div class="flex flex-col gap-4">
-      <h2 v-if="isSidebarOpen">{{ t("navigationMain") }}</h2>
+      <h2 v-if="isSidebarOpen">{{ $t("navigation.navigationMain") }}</h2>
 
       <nav :class="['flex flex-col gap-2', !isSidebarOpen && 'gap-[0.88rem]']">
         <NuxtLink
@@ -18,7 +17,9 @@ const localeRoute = useLocaleRoute();
           ]"
         >
           <Icon name="mdi:newspaper" :class="[!isSidebarOpen && 'text-2xl']" />
-          <span v-show="isSidebarOpen">{{ t("navigationFeed") }}</span>
+          <span v-show="isSidebarOpen">{{
+            $t("navigation.navigationFeed")
+          }}</span>
         </NuxtLink>
 
         <NuxtLink
@@ -32,7 +33,9 @@ const localeRoute = useLocaleRoute();
             name="mdi:account-group"
             :class="[!isSidebarOpen && 'text-2xl']"
           />
-          <span v-show="isSidebarOpen">{{ t("navigationUsers") }}</span>
+          <span v-show="isSidebarOpen">{{
+            $t("navigation.navigationUsers")
+          }}</span>
         </NuxtLink>
 
         <NuxtLink
@@ -43,7 +46,9 @@ const localeRoute = useLocaleRoute();
           ]"
         >
           <Icon name="mdi:account" :class="[!isSidebarOpen && 'text-2xl']" />
-          <span v-show="isSidebarOpen">{{ t("navigationProfile") }}</span>
+          <span v-show="isSidebarOpen">{{
+            $t("navigation.navigationProfile")
+          }}</span>
         </NuxtLink>
 
         <NuxtLink
@@ -54,7 +59,9 @@ const localeRoute = useLocaleRoute();
           ]"
         >
           <Icon name="mdi:bell" :class="[!isSidebarOpen && 'text-2xl']" />
-          <span v-show="isSidebarOpen">{{ t("navigationNotifications") }}</span>
+          <span v-show="isSidebarOpen">{{
+            $t("navigation.navigationNotifications")
+          }}</span>
         </NuxtLink>
 
         <NuxtLink
@@ -65,13 +72,15 @@ const localeRoute = useLocaleRoute();
           ]"
         >
           <Icon name="mdi:settings" :class="[!isSidebarOpen && 'text-2xl']" />
-          <span v-show="isSidebarOpen">{{ t("navigationSettings") }}</span>
+          <span v-show="isSidebarOpen">{{
+            $t("navigation.navigationSettings")
+          }}</span>
         </NuxtLink>
       </nav>
     </div>
 
     <div class="flex flex-col gap-4">
-      <h2 v-if="isSidebarOpen">{{ t("navigationExplore") }}</h2>
+      <h2 v-if="isSidebarOpen">{{ $t("navigation.navigationExplore") }}</h2>
 
       <nav :class="['flex flex-col gap-2', !isSidebarOpen && 'gap-[0.88rem]']">
         <NuxtLink
@@ -82,7 +91,9 @@ const localeRoute = useLocaleRoute();
           ]"
         >
           <Icon name="mdi:bookmark" :class="[!isSidebarOpen && 'text-2xl']" />
-          <span v-show="isSidebarOpen">{{ t("navigationSaved") }}</span>
+          <span v-show="isSidebarOpen">{{
+            $t("navigation.navigationSaved")
+          }}</span>
         </NuxtLink>
 
         <NuxtLink
@@ -96,7 +107,9 @@ const localeRoute = useLocaleRoute();
             name="mdi:account-group"
             :class="[!isSidebarOpen && 'text-2xl']"
           />
-          <span v-show="isSidebarOpen">{{ t("navigationForums") }}</span>
+          <span v-show="isSidebarOpen">{{
+            $t("navigation.navigationForums")
+          }}</span>
         </NuxtLink>
 
         <NuxtLink
@@ -107,7 +120,9 @@ const localeRoute = useLocaleRoute();
           ]"
         >
           <Icon name="mdi:label" :class="[!isSidebarOpen && 'text-2xl']" />
-          <span v-show="isSidebarOpen">{{ t("navigationTopics") }}</span>
+          <span v-show="isSidebarOpen">{{
+            $t("navigation.navigationTopics")
+          }}</span>
         </NuxtLink>
 
         <NuxtLink
@@ -118,7 +133,9 @@ const localeRoute = useLocaleRoute();
           ]"
         >
           <Icon name="mdi:image" :class="[!isSidebarOpen && 'text-2xl']" />
-          <span v-show="isSidebarOpen">{{ t("navigationGallery") }}</span>
+          <span v-show="isSidebarOpen">{{
+            $t("navigation.navigationGallery")
+          }}</span>
         </NuxtLink>
       </nav>
     </div>

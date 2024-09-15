@@ -24,7 +24,7 @@ defineProps<DialogProps>();
         leave-from="opacity-100"
         leave-to="opacity-0"
       >
-        <div class="fixed inset-0 bg-black/10 dark:bg-black/35" />
+        <div class="fixed inset-0 bg-black/10 dark:bg-gray-600/20" />
       </HeadlessTransitionChild>
 
       <div class="fixed inset-0 overflow-y-auto">
@@ -43,7 +43,7 @@ defineProps<DialogProps>();
             <HeadlessDialogPanel
               :class="
                 cn(
-                  'w-full max-w-md transform overflow-visible rounded-2xl bg-white dark:bg-dark-800 p-6 text-left align-middle shadow-xl transition-all',
+                  'w-full max-w-md transform overflow-visible rounded-2xl bg-white dark:bg-dark-900 p-6 text-left align-middle shadow-xl transition-all',
                   $props.panelClass
                 )
               "

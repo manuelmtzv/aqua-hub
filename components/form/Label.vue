@@ -11,7 +11,7 @@ defineProps<FormLabelProps>();
 
 <template>
   <div :class="cn('flex flex-col gap-1', $props.class)">
-    <label for="">{{ label }}</label>
+    <label v-if="label">{{ label }}</label>
 
     <slot />
 

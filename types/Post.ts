@@ -14,3 +14,11 @@ export type Post = {
   reactions: any[];
   comments: Comment[];
 };
+
+export type PostForm = {
+  title: string;
+  content: string;
+  forum: string;
+  topic: string;
+  language: string;
+};

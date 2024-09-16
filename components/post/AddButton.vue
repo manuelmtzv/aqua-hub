@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const { submittingPost } = usePostState();
 const openDialog = ref(false);
 
 const closeDialog = () => {
@@ -16,12 +17,13 @@ const closeDialog = () => {
   </Button>
 
   <Dialog
+    panel-class="max-w-3xl"
     :is-open="openDialog"
     :close-dialog="closeDialog"
-    panel-class="max-w-3xl"
+    :loading="submittingPost"
   >
     <template #body>
-      <PostForm />
+      <PostCreateForm @on-cancel="closeDialog" @on-success="closeDialog" />
     </template>
   </Dialog>
 </template>

@@ -1,5 +1,5 @@
 import type { $Fetch, NitroFetchRequest } from "nitropack";
-import type { ListResponse, Post } from "@/types";
+import type { ListResponse, Post, PostForm } from "@/types";
 
 export const postRepository = <T>(fetch?: $Fetch<T, NitroFetchRequest>) => {
   if (!fetch) {
@@ -9,6 +9,13 @@ export const postRepository = <T>(fetch?: $Fetch<T, NitroFetchRequest>) => {
   return {
     async getPosts(): Promise<ListResponse<Post>> {
       return fetch<ListResponse<Post>>("/posts");
+    },
+
+    async createPost(payload: PostForm): Promise<Post> {
+      return fetch<Post>("/posts", {
+        method: "POST",
+        body: payload,
+      });
     },
   };
 };

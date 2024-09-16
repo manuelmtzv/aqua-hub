@@ -1,6 +1,6 @@
 <script setup lang="ts">
 type FormLabelProps = {
-  label: string;
+  label?: string;
   error?: MaybeRef<string>;
   class?: string;
   errorClass?: string;
@@ -15,7 +15,7 @@ defineProps<FormLabelProps>();
 
     <slot />
 
-    <span :class="cn('text-red-400', $props.errorClass)" v-if="error">{{
+    <span :class="cn('text-red-300 text-sm', $props.errorClass)" v-if="error">{{
       error
     }}</span>
   </div>

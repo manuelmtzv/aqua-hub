@@ -7,6 +7,7 @@ export interface DialogProps {
   title?: string;
   panelClass?: ClassValue;
   static?: boolean;
+  loading?: boolean;
 }
 
 defineProps<DialogProps>();
@@ -63,6 +64,11 @@ defineProps<DialogProps>();
               <div v-if="$slots['footer']" class="mt-4">
                 <slot name="footer" />
               </div>
+
+              <AnimationLoadingSpin
+                :when="loading"
+                class="absolute top-6 right-6"
+              />
             </HeadlessDialogPanel>
           </HeadlessTransitionChild>
         </div>

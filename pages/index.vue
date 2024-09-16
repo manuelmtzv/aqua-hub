@@ -24,7 +24,7 @@ const localePath = useLocalePath();
 
       <NuxtLink
         :to="localePath('/auth/register')"
-        class="inline-block px-4 py-2 rounded-md shadow-sm transition-colors duration-200 button--black font-semibold"
+        class="inline-block px-5 py-2 rounded-md shadow-sm transition-colors duration-200 button--black font-semibold text-lg"
       >
         {{ $t("welcome.start") }}
       </NuxtLink>

@@ -4,6 +4,7 @@ import { Collapse } from "vue-collapsed";
 type DropdownProps = {
   title: string;
   class?: string;
+  titleClass?: string;
 };
 
 defineProps<DropdownProps>();
@@ -22,7 +23,7 @@ const toggleDropdown = () => {
       class="flex items-center gap-4 justify-between w-full"
       @click.prevent="toggleDropdown"
     >
-      <h3>{{ title }}</h3>
+      <h3 :class="cn('text-sm', titleClass)">{{ title }}</h3>
 
       <Icon v-if="!isOpen" name="heroicons:chevron-down" />
 

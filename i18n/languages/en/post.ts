@@ -11,4 +11,10 @@ export const post = {
   forumPlaceholder: "Select a forum",
   topicPlaceholder: "Select a topic",
   submit: "Submit post",
+  created: "Post created",
+
+  titleRequired: "The title is required",
+  contentRequired: "The content is required",
+  topicRequired: "The topic is required",
+  forumRequired: "The forum is required",
 };

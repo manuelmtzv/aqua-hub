@@ -10,6 +10,7 @@ export default defineNuxtPlugin({
         context.options.headers = {
           ...context.options.headers,
           "Accept-Language": $i18n.locale.value,
+          Authorization: `Bearer ${useCookie("access_token").value}`,
         };
       },
     });

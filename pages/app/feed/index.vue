@@ -5,5 +5,7 @@
     <FeedHeader />
 
     <PostList />
+
+    <NuxtPage />
   </div>
 </template>

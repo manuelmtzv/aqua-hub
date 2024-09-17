@@ -11,9 +11,9 @@ const route = useRoute();
 </script>
 
 <template>
-  <div>
+  <Teleport to="body">
     <Dialog is-open :close-dialog="() => {}">
       <template #body> <h2>Hola</h2> </template>
     </Dialog>
-  </div>
+  </Teleport>
 </template>

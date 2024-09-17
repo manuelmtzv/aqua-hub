@@ -11,14 +11,16 @@ const { post } = defineProps<PostEntry>();
 </script>
 
 <template>
-  <NuxtLink
-    :to="to"
-    class="flex flex-col gap-4 p-10 border border-gray-200 rounded-md dark:bg-dark-900 dark:border-dark-800"
-  >
-    <PostHeader :post="post" />
+  <div>
+    <PlusModalLink
+      :to="to"
+      class="flex flex-col gap-4 p-10 border border-gray-200 rounded-md dark:bg-dark-900 dark:border-dark-800"
+    >
+      <PostHeader :post="post" />
 
-    <PostContent :post="post" />
+      <PostContent :post="post" />
 
-    <PostComments :comments="post.comments" />
-  </NuxtLink>
+      <PostComments :comments="post.comments" />
+    </PlusModalLink>
+  </div>
 </template>

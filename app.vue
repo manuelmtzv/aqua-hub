@@ -17,6 +17,6 @@ watch(
 <template>
   <NuxtLayout>
     <NuxtLoadingIndicator />
-    <NuxtPage />
+    <PlusModalNuxtPage />
   </NuxtLayout>
 </template>

@@ -27,6 +27,7 @@ export default defineNuxtConfig({
     "floating-vue/nuxt",
     "dayjs-nuxt",
     "@nuxtjs/tailwindcss",
+    "nuxt-pages-plus",
   ],
   dayjs: {
     locales: ["en", "es"],

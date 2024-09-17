@@ -1,5 +1,7 @@
 export const navigation = {
   navigationSearch: "Buscar",
+  navigationSearchPlaceholder: "Buscar...",
+
   navigationMain: "Menú principal",
   navigationFeed: "Muro",
   navigationUsers: "Usuarios",

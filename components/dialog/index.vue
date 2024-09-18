@@ -11,11 +11,17 @@ export interface DialogProps {
 }
 
 defineProps<DialogProps>();
+const body = ref<HTMLElement | null>(null);
 </script>
 
 <template>
   <HeadlessTransitionRoot appear :show="isOpen" as="template">
-    <HeadlessDialog as="div" @close="closeDialog" class="relative z-10">
+    <HeadlessDialog
+      as="div"
+      @close="closeDialog"
+      class="relative z-10"
+      :initial-focus="body"
+    >
       <HeadlessTransitionChild
         as="template"
         enter="duration-300 ease-out"
@@ -57,7 +63,7 @@ defineProps<DialogProps>();
                 {{ title }}
               </HeadlessDialogTitle>
 
-              <div>
+              <div ref="body">
                 <slot name="body" />
               </div>
 

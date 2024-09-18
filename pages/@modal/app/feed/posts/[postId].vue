@@ -1,14 +1,17 @@
 <script setup lang="ts">
 const router = useRouter();
-const modalRouter = useModalRouter();
 
-const id = computed(() => router.currentRoute.value.params.postId);
+const id = computed(() => router.currentRoute.value.params.postId as string);
 
 const isOpen = ref(true);
 
 function closeDialog() {
   isOpen.value = false;
-  modalRouter.close();
+
+  // TODO: validate this implementation in the future
+  setTimeout(() => {
+    router.back();
+  }, 300);
 }
 </script>
 

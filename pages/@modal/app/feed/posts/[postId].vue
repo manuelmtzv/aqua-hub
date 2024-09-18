@@ -17,7 +17,11 @@ function closeDialog() {
 
 <template>
   <Teleport to="body">
-    <Dialog :is-open="isOpen" :close-dialog="closeDialog">
+    <Dialog
+      :is-open="isOpen"
+      :close-dialog="closeDialog"
+      panel-class="max-w-4xl"
+    >
       <template #body>
         <template v-if="id">
           <PostDetails :id="id" />

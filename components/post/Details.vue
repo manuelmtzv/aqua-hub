@@ -27,6 +27,8 @@ const { data, status } = await useLazyAsyncData(`post:${id}`, () =>
       <PostContent :post="data" />
 
       <PostComments :comments="data.comments" />
+
+      <TiptapEditor />
     </div>
   </div>
 </template>

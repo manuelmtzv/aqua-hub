@@ -7,6 +7,10 @@ export const postRepository = <T>(fetch?: $Fetch<T, NitroFetchRequest>) => {
   }
 
   return {
+    async getPost(id: string): Promise<Post> {
+      return fetch<Post>(`/posts/${id}`);
+    },
+
     async getPosts(): Promise<ListResponse<Post>> {
       return fetch<ListResponse<Post>>("/posts");
     },

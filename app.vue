@@ -17,6 +17,8 @@ watch(
 <template>
   <NuxtLayout>
     <NuxtLoadingIndicator />
-    <PlusModalNuxtPage />
+    <PlusModalNuxtPage v-slot="{ route }">
+      <NuxtPage :route="route" />
+    </PlusModalNuxtPage>
   </NuxtLayout>
 </template>

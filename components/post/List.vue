@@ -14,6 +14,6 @@ const localePath = useLocalePath();
       :to="localePath(`/app/feed/posts/${post.id}`)"
     />
 
-    <PlusModalPage name="posts" />
+    <PlusModalPage name="modal" />
   </template>
 </template>

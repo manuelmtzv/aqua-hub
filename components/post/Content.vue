@@ -14,7 +14,7 @@ const haveComments = props.post.comments.length > 0;
   <div class="flex flex-col gap-4">
     <h3 class="font-medium">{{ post.title }}</h3>
 
-    <p class="text-sm font-medium">{{ post.content }}</p>
+    <div class="text-sm" v-html="post.content"></div>
 
     <nav
       :class="[

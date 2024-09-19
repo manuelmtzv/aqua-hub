@@ -1,23 +1,39 @@
 <script setup lang="ts">
-import { Editor, EditorContent } from "@tiptap/vue-3";
+import { useEditor, EditorContent } from "@tiptap/vue-3";
 import StarterKit from "@tiptap/starter-kit";
+import Placeholder from "@tiptap/extension-placeholder";
 
-const editor = ref<Editor>();
+type TiptapEditorProps = {
+  placeholder?: string;
+};
 
-onMounted(() => {
-  editor.value = new Editor({
-    content: "<p>I’m running Tiptap with Vue.js. 🎉</p>",
-    extensions: [StarterKit],
-  });
-});
+const props = defineProps<TiptapEditorProps>();
+const value = defineModel<string>({ required: true });
 
-onBeforeUnmount(() => {
-  editor.value?.destroy();
+const editor = useEditor({
+  content: value.value,
+  onCreate({ editor }) {
+    value.value = editor.getHTML();
+  },
+  onUpdate({ editor }) {
+    value.value = editor.getHTML();
+  },
+  extensions: [
+    StarterKit,
+    Placeholder.configure({
+      placeholder: props.placeholder ?? "Start typing...",
+    }),
+  ],
+  editorProps: {
+    attributes: {
+      class: cn("input text-sm min-h-44 max-h-96 overflow-y-auto"),
+    },
+  },
 });
 </script>
 
 <template>
   <ClientOnly>
-    <EditorContent :editor="editor" />
+    <EditorContent :editor="editor" v-model="value" />
   </ClientOnly>
 </template>

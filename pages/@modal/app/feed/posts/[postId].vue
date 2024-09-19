@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const router = useRouter();
+const modalRouter = useModalRouter();
 
 const id = computed(() => router.currentRoute.value.params.postId as string);
 
@@ -10,7 +11,7 @@ function closeDialog() {
 
   // TODO: validate this implementation in the future
   setTimeout(() => {
-    router.back();
+    modalRouter.close();
   }, 300);
 }
 </script>

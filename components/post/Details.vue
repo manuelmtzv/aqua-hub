@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { postRepository } from "@/repository";
-import { post } from "~/i18n/languages/es/post";
 
 type PostDetailsProps = {
   id: string;
@@ -27,8 +26,6 @@ const { data, status } = await useLazyAsyncData(`post:${id}`, () =>
       <PostContent :post="data" />
 
       <PostComments :comments="data.comments" />
-
-      <TiptapEditor />
     </div>
   </div>
 </template>

@@ -98,7 +98,7 @@ const displayedTopics = computed(() => {
       </FormLabel>
 
       <FormLabel :error="v$.content.$errors[0]?.$message">
-        <FormTextarea
+        <TiptapEditor
           v-model="form.content"
           :placeholder="$t('post.contentPlaceholder')"
         />

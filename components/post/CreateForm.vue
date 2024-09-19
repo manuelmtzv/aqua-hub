@@ -137,6 +137,8 @@ const displayedTopics = computed(() => {
         {{ $t("post.submit") }}
       </FormButton>
     </div>
+
+    <pre>{{ form }}</pre>
   </form>
 </template>
 

@@ -13,6 +13,7 @@
     "@nuxtjs/google-fonts": "^3.2.0",
     "@pinia/nuxt": "^0.5.1",
     "@tiptap/extension-placeholder": "^2.7.1",
+    "@tiptap/extension-underline": "^2.7.2",
     "@tiptap/pm": "^2.7.1",
     "@tiptap/starter-kit": "^2.7.1",
     "@tiptap/vue-3": "^2.7.1",
@@ -44,6 +45,7 @@
     "dayjs-nuxt": "^2.1.11",
     "nuxt": "3.13.0",
     "nuxt-headlessui": "^1.2.0",
-    "nuxt-pages-plus": "^0.4.0"
+    "nuxt-pages-plus": "^0.4.0",
+    "sass-embedded": "^1.79.1"
   }
 }

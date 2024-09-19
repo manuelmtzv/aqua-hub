@@ -17,10 +17,10 @@ const localePath = useLocalePath();
         {{ $t("welcome.welcome") }}
       </h1>
 
-      <p
+      <div
         class="max-w-[48rem] text-3xl text-[1.75rem]"
         v-html="$t('welcome.introduction')"
-      ></p>
+      ></div>
 
       <NuxtLink
         :to="localePath('/auth/register')"

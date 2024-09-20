@@ -33,7 +33,7 @@ const editor = useEditor({
   editorProps: {
     attributes: {
       class: cn(
-        "block w-full px-4 py-2 rounded-md shadow-sm focus:outline-none text-sm  dark:bg-dark-800 dark:border-dark-700 rounded-t-none min-h-44 max-h-96 overflow-y-auto"
+        "block w-full px-4 py-3 rounded-md shadow-sm focus:outline-none text-sm  dark:bg-dark-800 dark:border-dark-700 rounded-t-none min-h-44 max-h-96 overflow-y-auto"
       ),
     },
   },
@@ -100,6 +100,20 @@ const editor = useEditor({
           "
         >
           <Icon name="heroicons:h3" size="14" />
+        </TiptapButtonWrapper>
+
+        <TiptapButtonWrapper
+          :is-active="editor.isActive('bulletList')"
+          @click.prevent="editor?.chain().focus().toggleBulletList().run()"
+        >
+          <Icon name="heroicons:list-bullet" size="14" />
+        </TiptapButtonWrapper>
+
+        <TiptapButtonWrapper
+          :is-active="editor.isActive('orderedList')"
+          @click.prevent="editor?.chain().focus().toggleOrderedList().run()"
+        >
+          <Icon name="heroicons:numbered-list" size="14" />
         </TiptapButtonWrapper>
       </nav>
 

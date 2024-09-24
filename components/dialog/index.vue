@@ -30,6 +30,7 @@ const body = ref<HTMLElement | null>(null);
         leave="duration-200 ease-in"
         leave-from="opacity-100"
         leave-to="opacity-0"
+        class="opacity-0"
       >
         <div class="fixed inset-0 bg-black/20 dark:bg-gray-600/20" />
       </HeadlessTransitionChild>
@@ -46,6 +47,7 @@ const body = ref<HTMLElement | null>(null);
             leave="duration-200 ease-in"
             leave-from="opacity-100 scale-100"
             leave-to="opacity-0 scale-95"
+            class="opacity-0 scale-95"
           >
             <HeadlessDialogPanel
               :class="

@@ -43,7 +43,7 @@
     "@pinia-plugin-persistedstate/nuxt": "^1.2.1",
     "autoprefixer": "^10.4.19",
     "dayjs-nuxt": "^2.1.11",
-    "nuxt": "^3.13.2",
+    "nuxt": "^3.13.0",
     "nuxt-headlessui": "^1.2.0",
     "nuxt-pages-plus": "^0.4.0",
     "sass-embedded": "^1.79.1"

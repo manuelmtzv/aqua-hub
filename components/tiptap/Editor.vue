@@ -3,6 +3,7 @@ import { useEditor, EditorContent } from "@tiptap/vue-3";
 import StarterKit from "@tiptap/starter-kit";
 import Placeholder from "@tiptap/extension-placeholder";
 import Underline from "@tiptap/extension-underline";
+import HardBreak from "@tiptap/extension-hard-break";
 
 type TiptapEditorProps = {
   placeholder?: string;
@@ -17,7 +18,15 @@ const editor = useEditor({
     value.value = editor.getHTML();
   },
   onUpdate({ editor }) {
-    value.value = editor.getHTML();
+    let content = editor.getHTML();
+
+    content = content.replace(/(<p><\/p>)+/g, "<br />");
+    content = content.replace(/(<p><br><\/p>)+/g, "<br />");
+    content = content.replace(/(<br \/>)+/g, "<br />");
+    content = content.replace(/(<br>)+/g, "<br />");
+    content = content.replace(/(<br>)$/g, "<br />");
+
+    value.value = content;
   },
   extensions: [
     StarterKit.configure({
@@ -33,7 +42,7 @@ const editor = useEditor({
   editorProps: {
     attributes: {
       class: cn(
-        "block w-full px-4 py-3 rounded-md shadow-sm focus:outline-none text-sm  dark:bg-dark-800 dark:border-dark-700 rounded-t-none min-h-44 max-h-96 overflow-y-auto"
+        "block w-full px-4 py-4 rounded-md shadow-sm focus:outline-none text-sm  dark:bg-dark-800 dark:border-dark-700 rounded-t-none min-h-44 max-h-96 overflow-y-auto"
       ),
     },
   },
@@ -75,14 +84,14 @@ const editor = useEditor({
           <Icon name="heroicons:strikethrough" size="14" />
         </TiptapButtonWrapper>
 
-        <TiptapButtonWrapper
+        <!-- <TiptapButtonWrapper
           :is-active="editor.isActive('heading', { level: 1 })"
           @click.prevent="
             editor?.chain().focus().toggleHeading({ level: 1 }).run()
           "
         >
           <Icon name="heroicons:h1" size="14" />
-        </TiptapButtonWrapper>
+        </TiptapButtonWrapper> -->
 
         <TiptapButtonWrapper
           :is-active="editor.isActive('heading', { level: 2 })"
@@ -127,22 +136,53 @@ const editor = useEditor({
   :first-child {
     margin-top: 0;
   }
+
   h1,
   h2,
   h3 {
     text-wrap: pretty;
+    font-weight: 500;
+  }
+
+  br {
+    display: block;
+    margin: 0.75rem 0;
+    content: "";
+  }
+
+  p {
+    font-size: 0.9rem;
   }
 
   h1 {
-    font-size: 1.4rem;
+    font-size: 1.125rem;
   }
 
   h2 {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   h3 {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+
+  ul,
+  ol {
+    padding: 0 1rem;
+    margin: 1.25rem 1rem 1.25rem 0.4rem;
+
+    li p {
+      margin-top: 0.25em;
+      margin-bottom: 0.25em;
+    }
   }
 }
 </style>

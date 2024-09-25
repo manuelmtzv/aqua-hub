@@ -12,9 +12,7 @@ const haveComments = props.post.comments.length > 0;
 
 <template>
   <div class="flex flex-col gap-4">
-    <h3 class="font-medium">{{ post.title }}</h3>
-
-    <div class="text-sm" v-html="post.content"></div>
+    <TiptapContent :content="post.content" :title="post.title" />
 
     <nav
       :class="[

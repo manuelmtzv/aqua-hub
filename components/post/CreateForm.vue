@@ -44,6 +44,8 @@ const rules = {
 const v$ = useVuelidate(rules, form);
 
 async function submitPost() {
+  form.content = cleanTiptapOutput(form.content);
+
   v$.value.$validate();
   if (v$.value.$error) return;
 

@@ -3,7 +3,6 @@ import { useEditor, EditorContent } from "@tiptap/vue-3";
 import StarterKit from "@tiptap/starter-kit";
 import Placeholder from "@tiptap/extension-placeholder";
 import Underline from "@tiptap/extension-underline";
-import HardBreak from "@tiptap/extension-hard-break";
 
 type TiptapEditorProps = {
   placeholder?: string;
@@ -18,20 +17,12 @@ const editor = useEditor({
     value.value = editor.getHTML();
   },
   onUpdate({ editor }) {
-    let content = editor.getHTML();
-
-    content = content.replace(/(<p><\/p>)+/g, "<br />");
-    content = content.replace(/(<p><br><\/p>)+/g, "<br />");
-    content = content.replace(/(<br \/>)+/g, "<br />");
-    content = content.replace(/(<br>)+/g, "<br />");
-    content = content.replace(/(<br>)$/g, "<br />");
-
-    value.value = content;
+    value.value = editor.getHTML();
   },
   extensions: [
     StarterKit.configure({
       heading: {
-        levels: [1, 2, 3],
+        levels: [2, 3],
       },
     }),
     Underline,
@@ -84,14 +75,12 @@ const editor = useEditor({
           <Icon name="heroicons:strikethrough" size="14" />
         </TiptapButtonWrapper>
 
-        <!-- <TiptapButtonWrapper
-          :is-active="editor.isActive('heading', { level: 1 })"
-          @click.prevent="
-            editor?.chain().focus().toggleHeading({ level: 1 }).run()
-          "
+        <TiptapButtonWrapper
+          :is-active="editor.isActive('paragraph')"
+          @click.prevent="editor?.chain().focus().setParagraph().run()"
         >
-          <Icon name="heroicons:h1" size="14" />
-        </TiptapButtonWrapper> -->
+          <Icon name="heroicons:pencil-solid" size="14" />
+        </TiptapButtonWrapper>
 
         <TiptapButtonWrapper
           :is-active="editor.isActive('heading', { level: 2 })"
@@ -142,12 +131,6 @@ const editor = useEditor({
   h3 {
     text-wrap: pretty;
     font-weight: 500;
-  }
-
-  br {
-    display: block;
-    margin: 0.75rem 0;
-    content: "";
   }
 
   p {

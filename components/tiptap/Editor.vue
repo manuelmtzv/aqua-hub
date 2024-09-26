@@ -6,10 +6,14 @@ import Underline from "@tiptap/extension-underline";
 
 type TiptapEditorProps = {
   placeholder?: string;
+  title?: string;
 };
 
 const props = defineProps<TiptapEditorProps>();
 const value = defineModel<string>({ required: true });
+const showPreview = ref(false);
+
+const title = computed(() => props.title ?? "");
 
 const editor = useEditor({
   content: value.value,
@@ -48,6 +52,13 @@ const editor = useEditor({
     >
       <nav class="border-b px-1.5 py-1 flex gap-2">
         <TiptapButtonWrapper
+          :is-active="editor.isActive('paragraph')"
+          @click.prevent="editor?.chain().focus().setParagraph().run()"
+        >
+          <Icon name="heroicons:pencil-solid" size="14" />
+        </TiptapButtonWrapper>
+
+        <TiptapButtonWrapper
           :is-active="editor.isActive('bold')"
           @click.prevent="editor?.chain().focus().toggleBold().run()"
         >
@@ -73,13 +84,6 @@ const editor = useEditor({
           @click.prevent="editor?.chain().focus().toggleStrike().run()"
         >
           <Icon name="heroicons:strikethrough" size="14" />
-        </TiptapButtonWrapper>
-
-        <TiptapButtonWrapper
-          :is-active="editor.isActive('paragraph')"
-          @click.prevent="editor?.chain().focus().setParagraph().run()"
-        >
-          <Icon name="heroicons:pencil-solid" size="14" />
         </TiptapButtonWrapper>
 
         <TiptapButtonWrapper
@@ -113,9 +117,30 @@ const editor = useEditor({
         >
           <Icon name="heroicons:numbered-list" size="14" />
         </TiptapButtonWrapper>
+
+        <TiptapButtonWrapper
+          :is-active="showPreview"
+          @click="showPreview = !showPreview"
+          class="ml-auto"
+        >
+          <span class="text-xs">Preview</span>
+        </TiptapButtonWrapper>
       </nav>
 
-      <EditorContent :editor="editor" v-model="value" class="" />
+      <EditorContent
+        v-if="!showPreview"
+        :editor="editor"
+        v-model="value"
+        class=""
+      />
+
+      <TiptapContent
+        v-else
+        :content="value"
+        :title="title"
+        class="p-4 gap-2"
+        content-class="block w-full rounded-md focus:outline-none text-sm  dark:bg-dark-800 dark:border-dark-700 rounded-t-none min-h-44 max-h-96 overflow-y-auto"
+      />
     </div>
   </ClientOnly>
 </template>
@@ -160,7 +185,7 @@ const editor = useEditor({
   ul,
   ol {
     padding: 0 1rem;
-    margin: 1.25rem 1rem 1.25rem 0.4rem;
+    margin: 0.75rem 0.75rem 0.75rem 0.4rem;
 
     li p {
       margin-top: 0.25em;

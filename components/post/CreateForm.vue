@@ -102,6 +102,7 @@ const displayedTopics = computed(() => {
       <FormLabel :error="v$.content.$errors[0]?.$message">
         <TiptapEditor
           v-model="form.content"
+          :title="form.title"
           :placeholder="$t('post.contentPlaceholder')"
         />
       </FormLabel>
@@ -139,8 +140,6 @@ const displayedTopics = computed(() => {
         {{ $t("post.submit") }}
       </FormButton>
     </div>
-
-    <pre>{{ form }}</pre>
   </form>
 </template>
 

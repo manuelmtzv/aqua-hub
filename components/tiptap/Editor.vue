@@ -120,7 +120,7 @@ const editor = useEditor({
 
         <TiptapButtonWrapper
           :is-active="showPreview"
-          @click="showPreview = !showPreview"
+          @click.prevent="showPreview = !showPreview"
           class="ml-auto"
         >
           <span class="text-xs">Preview</span>

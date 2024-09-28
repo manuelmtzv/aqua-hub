@@ -13,7 +13,7 @@ const localeRoute = useLocaleRoute();
           :to="localeRoute('/app/feed')"
           :class="[
             'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50  link dark:hover:bg-dark-850',
-            isSidebarOpen ? 'px-3 py-1.5' : 'rounded-md p-1',
+            isSidebarOpen ? 'px-3 py-1.5' : 'rounded-md p-1 justify-center',
           ]"
         >
           <Icon name="mdi:newspaper" :class="[!isSidebarOpen && 'text-2xl']" />
@@ -26,7 +26,7 @@ const localeRoute = useLocaleRoute();
           :to="localeRoute('/app/people')"
           :class="[
             'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50  link dark:hover:bg-dark-850',
-            isSidebarOpen ? 'px-3 py-1.5' : 'rounded-md p-1',
+            isSidebarOpen ? 'px-3 py-1.5' : 'rounded-md p-1 justify-center',
           ]"
         >
           <Icon
@@ -42,7 +42,7 @@ const localeRoute = useLocaleRoute();
           :to="localeRoute('/app/profile')"
           :class="[
             'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50  link dark:hover:bg-dark-850',
-            isSidebarOpen ? 'px-3 py-1.5' : 'rounded-md p-1',
+            isSidebarOpen ? 'px-3 py-1.5' : 'rounded-md p-1 justify-center',
           ]"
         >
           <Icon name="mdi:account" :class="[!isSidebarOpen && 'text-2xl']" />
@@ -55,7 +55,7 @@ const localeRoute = useLocaleRoute();
           :to="localeRoute('/app/notifications')"
           :class="[
             'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50  link dark:hover:bg-dark-850',
-            isSidebarOpen ? 'px-3 py-1.5' : 'rounded-md p-1',
+            isSidebarOpen ? 'px-3 py-1.5' : 'rounded-md p-1 justify-center',
           ]"
         >
           <Icon name="mdi:bell" :class="[!isSidebarOpen && 'text-2xl']" />
@@ -68,7 +68,7 @@ const localeRoute = useLocaleRoute();
           :to="localeRoute('/app/settings')"
           :class="[
             'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50  link dark:hover:bg-dark-850',
-            isSidebarOpen ? 'px-3 py-1.5' : 'rounded-md p-1',
+            isSidebarOpen ? 'px-3 py-1.5' : 'rounded-md p-1 justify-center',
           ]"
         >
           <Icon name="mdi:settings" :class="[!isSidebarOpen && 'text-2xl']" />
@@ -87,7 +87,7 @@ const localeRoute = useLocaleRoute();
           :to="localeRoute('/app/saved')"
           :class="[
             'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50  link dark:hover:bg-dark-850',
-            isSidebarOpen ? 'px-3 py-1.5' : 'rounded-md p-1',
+            isSidebarOpen ? 'px-3 py-1.5' : 'rounded-md p-1 justify-center',
           ]"
         >
           <Icon name="mdi:bookmark" :class="[!isSidebarOpen && 'text-2xl']" />
@@ -100,7 +100,7 @@ const localeRoute = useLocaleRoute();
           :to="localeRoute('/app/forums')"
           :class="[
             'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50  link dark:hover:bg-dark-850',
-            isSidebarOpen ? 'px-3 py-1.5' : 'rounded-md p-1',
+            isSidebarOpen ? 'px-3 py-1.5' : 'rounded-md p-1 justify-center',
           ]"
         >
           <Icon
@@ -116,7 +116,7 @@ const localeRoute = useLocaleRoute();
           :to="localeRoute('/app/topics')"
           :class="[
             'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50  link dark:hover:bg-dark-850',
-            isSidebarOpen ? 'px-3 py-1.5' : 'rounded-md p-1',
+            isSidebarOpen ? 'px-3 py-1.5' : 'rounded-md p-1 justify-center',
           ]"
         >
           <Icon name="mdi:label" :class="[!isSidebarOpen && 'text-2xl']" />
@@ -129,7 +129,7 @@ const localeRoute = useLocaleRoute();
           :to="localeRoute('/app/gallery')"
           :class="[
             'flex items-center gap-[0.62rem] rounded-md hover:bg-gray-50  link dark:hover:bg-dark-850',
-            isSidebarOpen ? 'px-3 py-1.5' : 'rounded-md p-1',
+            isSidebarOpen ? 'px-3 py-1.5' : 'rounded-md p-1 justify-center',
           ]"
         >
           <Icon name="mdi:image" :class="[!isSidebarOpen && 'text-2xl']" />

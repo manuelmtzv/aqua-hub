@@ -18,7 +18,7 @@ const { data, status } = await useLazyAsyncData(`post:${id}`, () =>
   </template>
 
   <div v-else-if="data">
-    <div v-motion-fade class="flex flex-col gap-5">
+    <div class="flex flex-col gap-5">
       <PostHeader :post="data" />
 
       <PostContent :post="data" show-tiptap-content />

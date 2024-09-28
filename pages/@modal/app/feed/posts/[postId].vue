@@ -9,7 +9,6 @@ const isOpen = ref(true);
 function closeDialog() {
   isOpen.value = false;
 
-  // TODO: validate this implementation in the future
   setTimeout(() => {
     modalRouter.close();
   }, 300);
@@ -25,7 +24,19 @@ function closeDialog() {
     >
       <template #body>
         <template v-if="id">
-          <PostDetails :id="id" />
+          <PostDetails
+            v-motion
+            :initial="{
+              opacity: 0,
+            }"
+            :enter="{
+              opacity: 1,
+              transition: {
+                delay: 0.75,
+              },
+            }"
+            :id="id"
+          />
         </template>
       </template>
     </Dialog>

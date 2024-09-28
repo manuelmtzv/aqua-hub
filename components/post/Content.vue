@@ -1,18 +1,41 @@
 <script setup lang="ts">
 import type { Post } from "@/types";
+import { useWindowSize } from "@vueuse/core";
 
 type PostContentProps = {
   post: Post;
+  textLimit?: number;
+  showTiptapContent?: boolean;
 };
 
-const props = defineProps<PostContentProps>();
-
+const props = withDefaults(defineProps<PostContentProps>(), {
+  textLimit: 850,
+  showTiptapContent: false,
+});
 const haveComments = props.post.comments.length > 0;
+
+const textLimit = computed(() => props.textLimit);
+
+const plainTextContent = computed(() => {
+  const text = getHtmlText(props.post.content).trim();
+
+  if (text.length > textLimit.value) {
+    return text.slice(0, textLimit.value) + "...";
+  }
+
+  return text;
+});
 </script>
 
 <template>
   <div class="flex flex-col gap-4">
-    <TiptapContent :content="post.content" :title="post.title" />
+    <TiptapContent
+      v-if="showTiptapContent"
+      :content="post.content"
+      :title="post.title"
+    />
+
+    <p v-else>{{ plainTextContent }}</p>
 
     <nav
       :class="[

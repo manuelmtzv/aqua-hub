@@ -139,7 +139,7 @@ const editor = useEditor({
         :content="value"
         :title="title"
         class="p-4 gap-2"
-        content-class="block w-full rounded-md focus:outline-none text-sm  dark:bg-dark-800 dark:border-dark-700 rounded-t-none min-h-36 max-h-96 overflow-y-auto"
+        content-class="block w-full rounded-md focus:outline-none text-sm  dark:bg-dark-800 dark:border-dark-700 rounded-t-none min-h-36 max-h-96"
       />
     </div>
   </ClientOnly>

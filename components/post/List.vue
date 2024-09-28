@@ -7,7 +7,7 @@ const localePath = useLocalePath();
 
 <template>
   <template v-if="data">
-    <PostEntry
+    <PostItem
       v-for="post in data.data"
       :key="post.id"
       :post="post"

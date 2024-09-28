@@ -16,7 +16,7 @@ const previewContent = computed(() =>
 </script>
 
 <template>
-  <div :class="cn('flex flex-col gap-2', $props.class)">
+  <div :class="cn('flex flex-col gap-2 overflow-y-auto', $props.class)">
     <h1 v-if="title" class="font-medium text-lg">{{ title }}</h1>
 
     <div

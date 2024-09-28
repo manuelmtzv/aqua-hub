@@ -23,7 +23,7 @@ const { data, status } = await useLazyAsyncData(`post:${id}`, () =>
     <div class="flex flex-col gap-5">
       <PostHeader :post="data" />
 
-      <PostContent :post="data" />
+      <PostContent :post="data" show-tiptap-content />
 
       <PostComments :comments="data.comments" />
     </div>

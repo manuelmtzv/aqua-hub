@@ -20,7 +20,7 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
   const { validate, refresh } = useAuth();
   const toast = useToast();
 
-  if (!authState.availableTokens.value) {
+  if (!authState.refreshToken.value) {
     return navigateTo(localePath("/auth/login"));
   }
 

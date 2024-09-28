@@ -65,7 +65,7 @@ export const useAuth = () => {
   }
 
   async function refresh() {
-    if (!authState.availableTokens.value) {
+    if (!authState.refreshToken.value) {
       useCookie("access_token").value = null;
       useCookie("refresh_token").value = null;
 
@@ -76,9 +76,9 @@ export const useAuth = () => {
       `${runtimeConfig.public.API_BASE_URL}/auth/refresh`,
       {
         method: "POST",
-        body: JSON.stringify({
-          refreshToken: useCookie("refresh_token").value,
-        }),
+        headers: {
+          Authorization: `Bearer ${useCookie("refresh_token").value}`,
+        },
       }
     );
 

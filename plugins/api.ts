@@ -8,14 +8,13 @@ export default defineNuxtPlugin({
       baseURL: API_BASE_URL,
       onRequest({ options }) {
         const headers = (options.headers ||= {} as Headers);
+        const authToken =
+          getHeader(headers, "Authorization") ??
+          `Bearer ${useCookie("access_token").value}`;
 
         // Check the reactive property access
         addHeader(headers, "Accept-Language", $i18n.locale);
-        addHeader(
-          headers,
-          "Authorization",
-          `Bearer ${useCookie("access_token").value}`
-        );
+        addHeader(headers, "Authorization", authToken);
       },
     });
 
@@ -37,7 +36,19 @@ function addHeader(
   } else if (headers instanceof Headers) {
     headers.set(key, value);
   } else {
-    // Ensure the original object is mutated
     (headers as Record<string, any>)[key] = value;
+  }
+}
+
+function getHeader(
+  headers: Headers | Array<Record<string, any>> | unknown,
+  key: string
+) {
+  if (Array.isArray(headers)) {
+    return headers.find(([k]) => k === key)?.[1];
+  } else if (headers instanceof Headers) {
+    return headers.get(key);
+  } else {
+    return (headers as Record<string, any>)[key];
   }
 }

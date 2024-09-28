@@ -1,11 +1,10 @@
 export const welcome = {
   welcome: "Share your knowledge and learn from others",
   subtitle: "Join the community",
-  introduction: `<span class="underline">FishKeepersHub</span> is a space to
+  introduction: `<span class="underline">FishKeepersHub</span> is a place where you can
         <span class="font-bold">share</span> your experiences and
-        <span class="font-bold">learn</span> from other enthusiasts of
-        <span class="font-bold">aquaristics</span>. Whether you're a beginner or an
-        expert, there's always something new to
+        <span class="font-bold">learn</span> from fellow <span class="font-bold">fishkeeping</span> enthusiasts
+        . Whether you're a beginner or an expert, there's always something new to
         <span class="font-bold">discover</span>.`,
   about: "About us",
   start: "Get started now",

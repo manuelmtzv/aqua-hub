@@ -4,6 +4,7 @@ import { header } from "./header";
 import { navigation } from "./navigation";
 import { post } from "./post";
 import { app } from "./app";
+import { tiptap } from "./tiptap";
 
 export const en = {
   app,
@@ -12,4 +13,5 @@ export const en = {
   header,
   navigation,
   post,
+  tiptap,
 };

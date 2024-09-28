@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { t } = useI18n();
+
 type TiptapContentProps = {
   content: string;
   title?: string;
@@ -6,7 +8,11 @@ type TiptapContentProps = {
   contentClass?: string;
 };
 
-defineProps<TiptapContentProps>();
+const props = defineProps<TiptapContentProps>();
+
+const previewContent = computed(() =>
+  props.content == "<p></p>" ? t("tiptap.previewEmpty") : props.content
+);
 </script>
 
 <template>
@@ -15,7 +21,7 @@ defineProps<TiptapContentProps>();
 
     <div
       :class="cn('tiptap tiptap-content', contentClass)"
-      v-html="content"
+      v-html="previewContent"
     ></div>
   </div>
 </template>

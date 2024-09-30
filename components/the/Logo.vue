@@ -10,7 +10,7 @@ const localePath = useLocalePath();
 const route = computed(() => {
   const { user } = useAuthState();
 
-  return user ? localePath("/app") : localePath("/");
+  return user ? localePath("/app/feed") : localePath("/");
 });
 </script>
 

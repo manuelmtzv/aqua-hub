@@ -1,19 +1,13 @@
 <script setup lang="ts">
 import { userRepository } from "@/repository/user.repository";
 
-const { user } = useAuthState();
-
-const { data: posts } = await useAsyncData("posts", () =>
-  userRepository().getUserPosts(user.value?.id || "")
-);
+const { data: user } = await useAsyncData("me", userRepository().getMe);
 </script>
 
 <template>
-  <div>
-    <h1>Profile</h1>
+  <template v-if="user">
+    <UserProfileHeading :user="user" />
+  </template>
 
-    <pre>{{ user }}</pre>
-
-    <pre>{{ posts }}</pre>
-  </div>
+  <p v-else>Loading...</p>
 </template>
